@@ -7,7 +7,7 @@ export function Products() {
 const [products, setProducts] = useState([])
 
 useEffect(()=> {
-  fetch(`http://localhost:8000/products`)
+  fetch(`https://enigmatic-temple-40493.herokuapp.com/products`)
   .then(res => res.json())
   .then(json => {
       setProducts(json.data);

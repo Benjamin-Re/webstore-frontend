@@ -37,7 +37,7 @@ export function Cart() {
       let userId = "62b0b711f370adbebfa75135";
 
       // Put request to user, to add the order to him
-      fetch('http://localhost:8000/users/'+userId, {
+      fetch('https://enigmatic-temple-40493.herokuapp.com/users/'+userId, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(order)
