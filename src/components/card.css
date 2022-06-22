@@ -1,0 +1,16 @@
+.card {
+    border: 1px dotted gray;
+}
+
+.card .upper {
+    height: 250px;
+    background-image: url('../images/chair.jpg');
+    background-size: cover;
+}
+
+.card .lower {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 1rem;
+}

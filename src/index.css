@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+body {
+  margin: 0;
+}
+
+.nav {
+  background-color: #555;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; 
+  display: flex;
+  gap: 2rem;
+}
+
+.nav li:hover{
+  color: #777;
+}
+
+.site-title {
+  font-size: 2rem;
+}
