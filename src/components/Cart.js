@@ -1,7 +1,9 @@
-import { useGetCart } from "../Context";
+import { useMyContext } from "../Context";
 
 export function Cart() {
-  const getCart = useGetCart(); // This gets the cart state, so ...
+
+  const {cart, logged, token} = useMyContext();
+  const [getCart, setCart] = cart;
   const products = getCart; // get cart is not a function but a variable
 
   return (

@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useMyContext } from "../Context";
 import css from './Signup.css';
 
 export function Login() {
   // Add variables using state
+  const {cart, logged, token} = useMyContext();
+  const [getLoggedIn, setLoggedIn] = logged;
+  const [getToken, setToken] = token;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,9 +23,9 @@ export function Login() {
       password: password,
     };
 
-    console.log(credentials);
-
-    // POST the new user
+    // http://localhost:8000
+    // https://enigmatic-temple-40493.herokuapp.com
+    // POST to login the user
     fetch("https://enigmatic-temple-40493.herokuapp.com/users/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -30,7 +34,11 @@ export function Login() {
       .then((res) => {
         return res.json();
       })
-      .then((data) => console.log(data))
+      .then((data) => {
+        setToken(data['accessToken'])
+        setLoggedIn(true);
+        console.log(getToken);
+      })
       .catch((error) => console.log(error));
 
   };

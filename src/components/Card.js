@@ -1,8 +1,9 @@
 import css from './card.css';
-import { useSetCart } from '../Context';
+import { useMyContext } from '../Context';
 
 export function Card(props) {
-  const setCart = useSetCart();
+  const {cart, logged, token} = useMyContext();
+  const [getCart, setCart] = cart;
  
   
   return (
