@@ -25,7 +25,7 @@ export function Card(props) {
       name: props.name,
       price: props.price
     }
-    setCart(product);
+    setCart((oldArray) => [...oldArray, product]);
   }
 }
 

@@ -13,20 +13,17 @@ export function ContextProvider({ children }) {
   const initialArray = [];
   const [getCartState, setCartState] = useState(initialArray);
   const [getLoggedIn, setLoggedIn] = useState(false);
-  const [getToken, setToken] = useState();
-
-  // wrap setCartState in a function so the spreading of the old array and adding of new element is taken care of
-  function setCart(arg) {
-    setCartState((oldArray) => [...oldArray, arg]);
-  }
+  const [getToken, setToken] = useState("");
+  const [getUserId, setUserId] = useState("");
 
   // Declare the values you want to pass to the children
   return (
     <Context.Provider
       value={{
-        cart: [getCartState, setCart],
+        cart: [getCartState, setCartState],
         logged: [getLoggedIn, setLoggedIn],
         token: [getToken, setToken],
+        userId: [getUserId, setUserId]
       }}
     >
       {" "}

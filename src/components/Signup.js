@@ -1,5 +1,7 @@
 import { useState } from "react";
 import css from './Signup.css';
+import { useMyContext } from "../Context";
+import { useNavigate } from 'react-router-dom';
 
 export function Signup() {
   // Add variables using state
@@ -7,6 +9,13 @@ export function Signup() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { cart, logged, token, userId } = useMyContext();
+  const [getLoggedIn, setLoggedIn] = logged;
+  const [getToken, setToken] = token;
+  const [getUserId, setUserId] = userId;
+  
+  // For redirecting
+  const navigate = useNavigate();
 
   // Functions handling user input
   const handleFirstName = (e) => setFirstName(e.target.value);
@@ -27,7 +36,9 @@ export function Signup() {
     console.log(newUser);
 
     // POST the new user
-    fetch("https://enigmatic-temple-40493.herokuapp.com/users/signup", {
+    // http://localhost:8000
+    // https://enigmatic-temple-40493.herokuapp.com
+    fetch("http://localhost:8000/users/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newUser),
@@ -35,7 +46,12 @@ export function Signup() {
       .then((res) => {
         return res.json();
       })
-      .then((data) => console.log(data))
+      .then((data) => {
+        setUserId(data["user"]["_id"]);
+        setLoggedIn(true);
+        setToken(data['accessToken']);
+        navigate("/auth");
+      })
       .catch((error) => console.log(error));
 
   };
