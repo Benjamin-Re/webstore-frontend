@@ -32,7 +32,7 @@ export function Login() {
     // http://localhost:8000
     // https://enigmatic-temple-40493.herokuapp.com
     // POST to login the user
-    fetch("http://localhost:8000/users/login", {
+    fetch("https://enigmatic-temple-40493.herokuapp.com/users/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(credentials),

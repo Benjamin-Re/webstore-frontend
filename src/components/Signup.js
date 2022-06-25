@@ -13,7 +13,7 @@ export function Signup() {
   const [getLoggedIn, setLoggedIn] = logged;
   const [getToken, setToken] = token;
   const [getUserId, setUserId] = userId;
-  
+
   // For redirecting
   const navigate = useNavigate();
 
@@ -38,7 +38,7 @@ export function Signup() {
     // POST the new user
     // http://localhost:8000
     // https://enigmatic-temple-40493.herokuapp.com
-    fetch("http://localhost:8000/users/signup", {
+    fetch("https://enigmatic-temple-40493.herokuapp.com/users/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newUser),
