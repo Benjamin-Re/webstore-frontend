@@ -7,6 +7,8 @@ import { Cart } from "./components/Cart";
 import { Home } from "./components/Home";
 import React, { useState } from "react";
 import { ContextProvider } from "./Context";
+import { MyOrders } from './components/Dashboard/MyOrders';
+import { ProfileDetails } from './components/Dashboard/ProfileDetails';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
             <Route path="/auth" element={<Auth />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/my-orders" element={<MyOrders />} />
+            <Route path="/profile-details" element={<ProfileDetails />} />
           </Routes>
         </div>
       </ContextProvider>

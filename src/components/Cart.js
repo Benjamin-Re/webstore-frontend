@@ -7,12 +7,13 @@ export function Cart() {
   const [getCart, setCart] = cart;
   const [getLoggedIn, setLoggedIn] = logged;
   const [getUserId, setUserId] = userId;
+  const [getToken, setToken] = token;
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log("render");
-  }, [getCart]);
+  // useEffect(() => {
+  //   console.log("render");
+  // }, [getCart]);
 
   return (
     <>
@@ -21,7 +22,7 @@ export function Cart() {
         {getCart.map((product) => {
           return (
             <li>
-              {product.name}, {product.price}€
+              {product.name}, {product.price}€, {product.quantity} units
             </li>
           );
         })}
@@ -31,6 +32,7 @@ export function Cart() {
   );
 
   function handleCheckout() {
+    console.log(getToken);
     /* Many things:
       check if user logged in
       if so send
@@ -45,9 +47,10 @@ export function Cart() {
 
     // Prepare the order
     let order = {
+      date: new Date(),
       products: getCart,
       total: getCart.reduce((total, current) => {
-        return (total += current.price);
+        return (total += (current.price * current.quantity));
       }, 0),
     };
     // Current user's id
@@ -56,12 +59,16 @@ export function Cart() {
     // Put request to user, to add the order to him
     // http://localhost:8000
     // https://enigmatic-temple-40493.herokuapp.com
-    fetch("https://enigmatic-temple-40493.herokuapp.com/users/" + userId, {
+    fetch("http://localhost:8000/users/" + userId, {
       method: "PATCH",
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json",
+        "Authorization": `bearer ${getToken}` 
+      },
       body: JSON.stringify(order),
     })
       .then((res) => {
+        if(!res.ok) {throw new Error("errpr")}
         return res.json();
       })
       .then((data) => {

@@ -13,7 +13,7 @@ export function ContextProvider({ children }) {
   const initialArray = [];
   const [getCartState, setCartState] = useState(initialArray);
   const [getLoggedIn, setLoggedIn] = useState(false);
-  const [getToken, setToken] = useState("");
+  const [getToken, setToken] = useState();
   const [getUserId, setUserId] = useState("");
 
   // Declare the values you want to pass to the children
