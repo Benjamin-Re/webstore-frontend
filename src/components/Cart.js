@@ -22,7 +22,8 @@ export function Cart() {
         {getCart.map((product) => {
           return (
             <li>
-              {product.name}, {product.price}€, {product.quantity} units
+              {product.name}, {product.price}€, {product.quantity} units,
+              <button id={product.id} onClick={function(){removePost(product)}}>Delete</button> 
             </li>
           );
         })}
@@ -30,6 +31,21 @@ export function Cart() {
       <button onClick={handleCheckout}>Checkout</button>
     </>
   );
+      
+  function removePost(product) {   
+
+    // setCart(prevState=>{
+    //   let newState = prevState;
+    //   console.log(e.target.id)
+    //   newState = newState.filter(elem=>{
+    //     console.log(elem.id)
+    //     return elem.id === e.target.id;
+    //   });
+    //   console.log(newState)
+    //   return newState;
+    // });
+  }
+
 
   function handleCheckout() {
     console.log(getToken);
