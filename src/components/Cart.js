@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 export function Cart() {
-  const { cart, logged, token, userId } = useMyContext();
+  const { cart, logged, token, userId, getQuantity, increase, decrease } = useMyContext();
   const [getCart, setCart] = cart;
   const [getLoggedIn, setLoggedIn] = logged;
   const [getUserId, setUserId] = userId;
   const [getToken, setToken] = token;
+  
 
   const navigate = useNavigate();
 
@@ -23,7 +24,8 @@ export function Cart() {
           return (
             <li>
               {product.name}, {product.price}€, {product.quantity} units,
-              <button id={product.id} onClick={function(){removePost(product)}}>Delete</button> 
+              <button onClick={()=>{increase(product.id)}}>+</button> 
+              <button onClick={()=>{decrease(product.id)}}>-</button> 
             </li>
           );
         })}
@@ -32,19 +34,20 @@ export function Cart() {
     </>
   );
       
-  function removePost(product) {   
-
-    // setCart(prevState=>{
-    //   let newState = prevState;
-    //   console.log(e.target.id)
-    //   newState = newState.filter(elem=>{
-    //     console.log(elem.id)
-    //     return elem.id === e.target.id;
-    //   });
-    //   console.log(newState)
-    //   return newState;
-    // });
-  }
+  // function removePost(product) {   
+  //   let itemQuant = getQuant(1);
+  //   console.log(itemQuant);
+  //   // setCart(prevState=>{
+  //   //   let newState = prevState;
+  //   //   console.log(e.target.id)
+  //   //   newState = newState.filter(elem=>{
+  //   //     console.log(elem.id)
+  //   //     return elem.id === e.target.id;
+  //   //   });
+  //   //   console.log(newState)
+  //   //   return newState;
+  //   // });
+  // }
 
 
   function handleCheckout() {
