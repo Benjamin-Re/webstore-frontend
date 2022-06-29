@@ -12,6 +12,11 @@ export function useMyContext() {
 export function ContextProvider({ children }) {
   const initialArray = [];
   const [getCart, setCart] = useState(initialArray);
+  const cartQuantity = getCart.reduce(
+    (accumulator, current) => {
+      return accumulator + current.quantity;
+    }, 0
+  )
 
   const [getLoggedIn, setLoggedIn] = useState(false);
   const [getToken, setToken] = useState();
@@ -68,6 +73,7 @@ export function ContextProvider({ children }) {
         getQuantity: getItemQuantity,
         increase: increaseQuantity,
         decrease: decreaseCartQuantity,
+        cartQuantity,
       }}
     >
       {" "}

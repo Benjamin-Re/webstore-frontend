@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import { useMyContext } from "../Context";
 
 export function Nav() {
-  const { cart, logged, token } = useMyContext();
+  const { cart, logged, token, cartQuantity } = useMyContext();
   const [getLoggedIn, setLoggedIn] = logged;
+
 
   return (
     <nav className="nav">
@@ -18,7 +19,7 @@ export function Nav() {
           <Link to="/auth">{getLoggedIn ? "Dashboard" : "Login"}</Link>
         </li>
         <li>
-          <Link to="/cart">Cart</Link>
+          <Link to="/cart">Cart #{cartQuantity}</Link>
         </li>
       </ul>
     </nav>
