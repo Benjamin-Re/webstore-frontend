@@ -11,6 +11,7 @@ useEffect(()=> {
   .then(res => res.json())
   .then(json => {
       setProducts(json.data);
+      
     })
 }, [])
 
@@ -21,7 +22,7 @@ useEffect(()=> {
         {products.map(product => {
           return (
             <>
-              <Card id={product.id} name={product.name} price={product.price}></Card>
+              <Card id={product.id} name={product.name} price={product.price} stock={product.quantity}></Card>
             </>
           )
         })}

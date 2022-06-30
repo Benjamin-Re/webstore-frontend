@@ -135,6 +135,6 @@ export function Cart() {
           console.log(data);
         });
     });
-    // navigate("/my-orders");
+    navigate("/my-orders");
   }
 }

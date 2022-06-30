@@ -27,14 +27,18 @@ export function Card(props) {
         <div className="upper"></div>
         <div className="lower">
           {props.name}, {props.price}€
-          {quantity === 0 ? (
-            <button onClick={addToCart}>Add to Cart</button>
-          ) : (
-            <div>
-              <button onClick={()=>{increase(props.id)}} >+</button>
-              <span></span>
-              <button onClick={()=>{decrease(props.id)}} >-</button>
-            </div>
+          {props.stock === 0 ? (<div>Sold Out</div>) : (
+            <>
+            {quantity === 0 ? (
+              <button onClick={addToCart}>Add to Cart</button>
+            ) : (
+              <div>
+                <button onClick={()=>{increase(props.id, props.stock)}} >+</button>
+                <span></span>
+                <button onClick={()=>{decrease(props.id)}} >-</button>
+              </div>
+            )}
+            </>
           )}
           {quantity}
         </div>

@@ -26,22 +26,22 @@ export function ContextProvider({ children }) {
     return getCart.find(item => item.id === id)?.quantity || 0;
   }
 
-  function increaseQuantity(id) {
-    console.log("increase")
+  function increaseQuantity(id, stock) {
+    console.log(stock)
     setCart(currItems => {
-      if (currItems.find(item => item.id === id) == null) {
-        const product = {id, quantity: 1}
-        console.log(product)
-        return [...currItems, product]
-      } else {
+     
         return currItems.map(item => {
           if (item.id === id) {
-            return { ...item, quantity: item.quantity + 1 }
+            if(item.quantity < stock){
+              return { ...item, quantity: item.quantity + 1 }
+            } else {
+              return item
+            }
           } else {
             return item
           }
         })
-      }
+      
     })
   }
 
