@@ -22,7 +22,7 @@ useEffect(()=> {
         {products.map(product => {
           return (
             <>
-              <Card id={product.id} name={product.name} price={product.price} stock={product.quantity}></Card>
+              <Card id={product.id} name={product.name} price={product.price} stock={product.quantity} imgSrc={product.imgSrc}></Card>
             </>
           )
         })}

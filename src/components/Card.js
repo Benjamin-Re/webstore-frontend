@@ -24,7 +24,7 @@ export function Card(props) {
   return (
     <>
       <div className="card" id={props.id}>
-        <div className="upper"></div>
+        <div className="upper"><img src={props.imgSrc} alt="a chair"></img></div>
         <div className="lower">
           {props.name}, {props.price}€
           {props.stock === 0 ? (<div>Sold Out</div>) : (
