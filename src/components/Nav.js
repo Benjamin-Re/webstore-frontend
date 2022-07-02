@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useMyContext } from "../Context";
+import '../styles/Nav.css';
 
 export function Nav() {
   const { cart, logged, token, cartQuantity } = useMyContext();

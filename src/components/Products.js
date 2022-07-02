@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "./Card";
-import css from './products.css';
+import css from '../styles/Products.css';
 
 
 export function Products() {

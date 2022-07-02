@@ -69,17 +69,12 @@ export function Cart() {
   }
 
   function handleCheckout() {
-    console.log(getToken);
-    /* Many things:
-      check if user logged in
-      if so send
-          put request to update getCart in db
-          send post request to update orders in db
-          get request to get the order and display order confirmation*/
+    console.log(getLoggedIn);
 
     // if not logged in redirect to /auth
     if (!getLoggedIn) {
       navigate("/auth");
+      return -1;
     }
 
     // Prepare the order

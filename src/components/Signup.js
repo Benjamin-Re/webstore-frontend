@@ -1,7 +1,7 @@
 import { useState } from "react";
-import css from './Signup.css';
+import css from "../styles/Signup.css";
 import { useMyContext } from "../Context";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 export function Signup() {
   // Add variables using state
@@ -9,6 +9,9 @@ export function Signup() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [street, setStreet] = useState("");
+  const [postal, setPostal] = useState("");
+
   const { cart, logged, token, userId } = useMyContext();
   const [getLoggedIn, setLoggedIn] = logged;
   const [getToken, setToken] = token;
@@ -22,6 +25,8 @@ export function Signup() {
   const handleLastName = (e) => setLastName(e.target.value);
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
+  const handleStreet = (e) => setStreet(e.target.value);
+  const handlePostal = (e) => setPostal(e.target.value);
 
   // Functions to handle submit
   const handleSubmit = (e) => {
@@ -31,14 +36,16 @@ export function Signup() {
       last_name: lastName,
       email: email,
       password: password,
+      address: {
+        street: street,
+        postal: postal,
+      },
     };
-
-    console.log(newUser);
 
     // POST the new user
     // http://localhost:8000
     // https://enigmatic-temple-40493.herokuapp.com
-    fetch("https://enigmatic-temple-40493.herokuapp.com/users/signup", {
+    fetch("http://localhost:8000/users/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newUser),
@@ -49,11 +56,10 @@ export function Signup() {
       .then((data) => {
         setUserId(data["user"]["_id"]);
         setLoggedIn(true);
-        setToken(data['accessToken']);
+        setToken(data["accessToken"]);
         navigate("/auth");
       })
       .catch((error) => console.log(error));
-
   };
 
   return (
@@ -62,6 +68,7 @@ export function Signup() {
       <form onSubmit={handleSubmit}>
         <label htmlFor="first_name">First Name:</label>
         <input
+          required
           type="text"
           name="first_name"
           id="first_name"
@@ -69,6 +76,7 @@ export function Signup() {
         ></input>
         <label htmlFor="last_name">Last Name</label>
         <input
+          required
           type="text"
           name="last_name"
           id="last_name"
@@ -76,6 +84,7 @@ export function Signup() {
         ></input>
         <label htmlFor="email">Email</label>
         <input
+          required
           type="email"
           name="email"
           id="email"
@@ -83,10 +92,27 @@ export function Signup() {
         ></input>
         <label htmlFor="password">Password</label>
         <input
+          required
           type="password"
           name="password"
           id="password"
           onChange={handlePassword}
+        ></input>
+        <label htmlFor="street">Street</label>
+        <input
+          required
+          type="text"
+          name="street"
+          id="street"
+          onChange={handleStreet}
+        ></input>
+        <label htmlFor="postal">Postal Code</label>
+        <input
+          required
+          type="text"
+          name="postal"
+          id="postal"
+          onChange={handlePostal}
         ></input>
         <button type="submit">Submit</button>
       </form>

@@ -9,6 +9,8 @@ import React, { useState } from "react";
 import { ContextProvider } from "./Context";
 import { MyOrders } from './components/Dashboard/MyOrders';
 import { ProfileDetails } from './components/Dashboard/ProfileDetails';
+import {ChangeAddress} from './components/Dashboard/ChangeProfile/ChangeAddress.js'
+import css from './styles/App.css';
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/my-orders" element={<MyOrders />} />
             <Route path="/profile-details" element={<ProfileDetails />} />
+            <Route path="/address" element={<ChangeAddress />} />
           </Routes>
         </div>
       </ContextProvider>

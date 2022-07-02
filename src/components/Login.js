@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useMyContext } from "../Context";
-import css from "./Signup.css";
+import css from "../styles/Signup.css"; // reusing signup's styles
 
 export function Login() {
   // Add variables using state

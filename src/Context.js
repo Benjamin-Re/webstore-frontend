@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 // Create two contexts
 const Context = React.createContext(); // This is used in Context.Provider
@@ -21,6 +21,30 @@ export function ContextProvider({ children }) {
   const [getLoggedIn, setLoggedIn] = useState(false);
   const [getToken, setToken] = useState();
   const [getUserId, setUserId] = useState("");
+
+
+
+  // // Store user login data (id, loggedin, token) in localStorage
+  // useEffect(()=>{
+  //   let data = localStorage.getItem("user-data");
+  //   if(data){
+  //     setLoggedIn(JSON.parse(data.loggedIn));
+  //     setToken(JSON.parse(data.token));
+  //     setUserId(JSON.parse(data.userId));
+  //   }
+  // }, []);
+
+  // // Save the data on every render
+  // useEffect(()=>{
+  //   let data = {
+  //     loggedIn: getLoggedIn,
+  //     token: getToken,
+  //     userId: getUserId,
+  //   }
+  //   localStorage.setItem("user-data", JSON.stringify(data));
+  // })
+
+
 
   function getItemQuantity(id) {
     return getCart.find(item => item.id === id)?.quantity || 0;

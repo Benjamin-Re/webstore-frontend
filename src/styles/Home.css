@@ -1,0 +1,23 @@
+.homeContainer {
+    border: 2px solid red;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin: auto;
+}
+
+h2 {
+    border: 1px solid blue;
+    width: 100%;
+    text-align: center;
+}
+.bigLink {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    background-color: gray;
+    padding: 14px;
+    border-radius: .5rem;
+}

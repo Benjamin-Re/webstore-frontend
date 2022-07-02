@@ -1,4 +1,4 @@
-import css from "./card.css";
+import css from "../styles/Card.css";
 import { useMyContext } from "../Context";
 import { useEffect, useState } from "react";
 
@@ -8,18 +8,7 @@ export function Card(props) {
   const quantity = getQuantity(props.id);
 
   
-  // // Get the quantity on page load from local storage(if any is saved)
-  // useEffect(()=>{
-  //   let data = localStorage.getItem("quantity");
-  //   if(data){
-  //     setQuantity(JSON.parse(data));
-  //   }
-  // }, []);
 
-  // // Save the quantity on every render
-  // useEffect(()=>{
-  //   localStorage.setItem("quantity", JSON.stringify(getQuantity));
-  // })
 
   return (
     <>
