@@ -1,16 +1,18 @@
 
 
 .nav {
+    position: relative;
     background-color: var(--navi);
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
-    height: 200px;
-  
+    height: 20%;
+    box-shadow: 0 1px 6px 2px black;
+    z-index: 1;
   }
-  
+
   .nav a {
     color: inherit;
     text-decoration: none;
@@ -30,5 +32,15 @@
   
   .site-title {
     font-size: 2rem;
+    letter-spacing: -2px;
+  }
+
+  .theC {
+    color: var(--strong);
+    font-size: 2rem;
   }
   
+  .theA {
+    font-size: 2.5rem;
+    letter-spacing: -5px;
+  }

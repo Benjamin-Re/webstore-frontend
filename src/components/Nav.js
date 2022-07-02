@@ -10,7 +10,7 @@ export function Nav() {
   return (
     <nav className="nav">
       <Link to="/" className="site-title">
-        Webshop
+        Shopping <span className="theC">C</span><span className="theA">/\</span>rt
       </Link>
       <ul>
         <li>

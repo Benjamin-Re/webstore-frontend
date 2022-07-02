@@ -40,3 +40,9 @@ Scattegories
 use sockets to play against other player
 DB backend for tracking scores
 get lists of words for each category and store in DB
+
+# images from pexels
+Photo by Dids: https://www.pexels.com/photo/photo-of-colorful-paint-3791873/
+Photo by Steve Johnson: https://www.pexels.com/photo/multicolored-abstract-painting-1509534/
+Photo by Andrea Piacquadio: https://www.pexels.com/photo/woman-in-collared-shirt-774909/
+Photo by Mikhail Nilov: https://www.pexels.com/photo/a-long-haired-man-sitting-on-the-floor-while-playing-a-steel-tongue-drum-6944746/

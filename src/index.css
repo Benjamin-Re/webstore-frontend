@@ -7,7 +7,13 @@
 }
 
 body {
+  padding: 0;
   margin: 0;
+  height: 2000px;
+}
+
+#root {
+  height: 100%;
 }
 
 button {
@@ -15,3 +21,4 @@ button {
   border-radius: 20px;
   padding: 14px;
 }
+
