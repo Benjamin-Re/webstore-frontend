@@ -32,7 +32,7 @@ export function Nav() {
           <FaBars style={iconStyle} onClick={handleBurger} />
         </div>
       </nav>
-      <div className="responsiveContainer hide">
+      <div className="responsiveContainer">
         <ul className="responsive">
           <li>
             <Link to="/products">Products</Link>
@@ -50,6 +50,7 @@ export function Nav() {
 
   function handleBurger() {
     const drop = document.querySelector(".responsiveContainer");
-    drop.classList.toggle("hide");
+    drop.classList.toggle("show");
+  
   }
 }

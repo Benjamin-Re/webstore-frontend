@@ -20,8 +20,19 @@ body {
 button {
   background-color: var(--strong);
   border-radius: 20px;
-  padding: 14px;
+  border: none;
+  padding: 14px 32px;
+  color: white;
+  font-size: 16px;
+  opacity: 1;
+  transition: all 0.2s linear;
 }
 
+button:hover{
+  box-shadow: 0 4px 6px 1px black;
+}
+button:active{
+  transform: translateY(4px);
+}
 
 

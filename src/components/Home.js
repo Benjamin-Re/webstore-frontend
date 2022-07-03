@@ -11,9 +11,11 @@ export function Home() {
           <h2>
             We don't sell art,<br></br> we are art
           </h2>
-          <Link className="bigLink" to="/products">
+          <button className="bigLink">
+          <Link to="/products">
             Shop now
           </Link>
+          </button>
         </div>
         <div className="sec2Intro">What our customer's think</div>
       </div>

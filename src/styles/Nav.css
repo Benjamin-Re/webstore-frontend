@@ -69,8 +69,11 @@ ul {
     display: none;
   }
 }
-.hide {
-  display: none !important;
+.show {
+  visibility: visible !important;
+  display: block;
+  opacity: 1 !important;
+  /* display: none !important; */
 }
 
 .responsiveContainer {
@@ -79,6 +82,9 @@ ul {
   width: 100%;
   box-shadow: 0 1px 6px 2px black;
   padding: 1rem;
+  transition: all 0.3s linear;
+  visibility: hidden;
+  opacity: 0;
 }
 
 a {
