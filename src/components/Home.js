@@ -45,15 +45,20 @@ export function Home() {
         <div className="sec3Card">
           <img src="/img/brushes.jpg" alt="image of material"></img>
           <div>Our materials are of the highest quality standards.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum pretium varius. Pellentesque lobortis tellus at sapien dapibus, vel tempor nisi blandit. Integer eu accumsan arcu. Nunc placerat metus id porttitor varius. Nullam ultricies efficitur porttitor. Aliquam facilisis varius eleifend. Sed eleifend, magna ut mattis pretium, lorem neque laoreet massa, eget finibus lorem massa sit amet felis.
           </div>
         </div>
         <div className="sec3Card">
           <img src="/img/canvas.jpg" alt="image of material"></img>
-          <div>Our materials are of the highest quality standards</div>
+          <div>Our materials are of the highest quality standards
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum pretium varius. Pellentesque lobortis tellus at sapien dapibus, vel tempor nisi blandit. Integer eu accumsan arcu. Nunc placerat metus id porttitor varius. Nullam ultricies efficitur porttitor. Aliquam facilisis varius eleifend. Sed eleifend, magna ut mattis pretium, lorem neque laoreet massa, eget finibus lorem massa sit amet felis.
+          </div>
         </div>
         <div className="sec3Card">
           <img src="/img/paint.jpg" alt="image of material"></img>
-          <div>Our materials are of the highest quality standards</div>
+          <div>Our materials are of the highest quality standards
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum pretium varius. Pellentesque lobortis tellus at sapien dapibus, vel tempor nisi blandit. Integer eu accumsan arcu. Nunc placerat metus id porttitor varius. Nullam ultricies efficitur porttitor. Aliquam facilisis varius eleifend. Sed eleifend, magna ut mattis pretium, lorem neque laoreet massa, eget finibus lorem massa sit amet felis.
+          </div>
         </div>
       </div>
     </div>

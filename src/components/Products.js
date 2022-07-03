@@ -18,6 +18,7 @@ useEffect(()=> {
   return (
     <>
       <h2>Products</h2>
+      <div className="containerContainer">
       <div className="products-container">
         {products.map(product => {
           return (
@@ -26,6 +27,7 @@ useEffect(()=> {
             </>
           )
         })}
+      </div>
       </div>
     </>
   );

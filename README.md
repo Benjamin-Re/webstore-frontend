@@ -51,4 +51,8 @@ Photo by Miguel Á. Padriñán: https://www.pexels.com/photo/several-paintbrushe
 Photo by cottonbro: https://www.pexels.com/photo/woman-holding-black-frame-with-white-screen-4065185/
 Photo by David Waschbüsch: https://www.pexels.com/photo/assorted-color-paint-buckets-1887946/
 Photo by Deeana Arts: https://www.pexels.com/photo/shallow-focus-photo-of-paint-brushes-1646953/
-
+Photo by <a href="https://unsplash.com/@bigbeardweebeard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Craig McKay</a> on <a href="https://unsplash.com/s/photos/smiling-person?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+Photo by <a href="https://unsplash.com/@virussinside?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Artiom Vallat</a> on <a href="https://unsplash.com/s/photos/paint?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+Photo by <a href="https://unsplash.com/@dancristianpaduret?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dan Cristian Pădureț</a> on <a href="https://unsplash.com/s/photos/paint?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  Photo by <a href="https://unsplash.com/@jenrielzany?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Zany Jadraque</a> on <a href="https://unsplash.com/s/photos/drawing-block?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  

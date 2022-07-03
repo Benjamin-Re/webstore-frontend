@@ -76,6 +76,10 @@ export function Cart() {
       navigate("/auth");
       return -1;
     }
+    if(getCart.length<1){
+      navigate("/products");
+      return -1;
+    }
 
     // Prepare the order
     let order = {
