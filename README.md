@@ -46,3 +46,9 @@ Photo by Dids: https://www.pexels.com/photo/photo-of-colorful-paint-3791873/
 Photo by Steve Johnson: https://www.pexels.com/photo/multicolored-abstract-painting-1509534/
 Photo by Andrea Piacquadio: https://www.pexels.com/photo/woman-in-collared-shirt-774909/
 Photo by Mikhail Nilov: https://www.pexels.com/photo/a-long-haired-man-sitting-on-the-floor-while-playing-a-steel-tongue-drum-6944746/
+https://www.htmlsymbols.xyz/unicode/U+2B50
+Photo by Miguel Á. Padriñán: https://www.pexels.com/photo/several-paintbrushes-114123/
+Photo by cottonbro: https://www.pexels.com/photo/woman-holding-black-frame-with-white-screen-4065185/
+Photo by David Waschbüsch: https://www.pexels.com/photo/assorted-color-paint-buckets-1887946/
+Photo by Deeana Arts: https://www.pexels.com/photo/shallow-focus-photo-of-paint-brushes-1646953/
+
