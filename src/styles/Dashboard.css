@@ -1,0 +1,18 @@
+.dashContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.dashContainer div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.dashContainer img {
+    width: 100px;
+    height: 100px;
+}

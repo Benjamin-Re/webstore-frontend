@@ -1,6 +1,7 @@
+
+
 export function ChangePassword({
   open,
-  children,
   onClose,
   handlePassword,
   handlePasswordRepeat,
@@ -12,9 +13,9 @@ export function ChangePassword({
   }
 
   return (
-    <>
+    <div className="modal">
       <h1>Change Password</h1>
-      {children}
+    
       <form onSubmit={handleSubmit}>
         <label htmlFor={field}>new password:</label>
         <input
@@ -34,6 +35,6 @@ export function ChangePassword({
         <button type="submit">Submit</button>
       </form>
       <button onClick={onClose}>Close</button>
-    </>
+    </div>
   );
 }

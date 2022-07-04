@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import { useMyContext } from "../../Context";
 import {
   useNavigate,
@@ -10,6 +9,7 @@ import {
 } from "react-router-dom";
 import { ChangeAddress } from "./ChangeProfile/ChangeAddress";
 import { ChangePassword } from "./ChangeProfile/ChangePasword";
+import '../../styles/Profile.css';
 
 export function ProfileDetails() {
   // Add variables using state
@@ -66,7 +66,7 @@ export function ProfileDetails() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(password !== passwordRepeat){
+    if(passwordRepeat !== "" && password !== passwordRepeat){
       setError("Passwords must match");
       navigate("/profile-details");
       return -1;
@@ -97,20 +97,21 @@ export function ProfileDetails() {
   };
 
   return (
-    <>
-      <h1>{getError}</h1>
-      <div>
-        <div>{firstName}</div>
-        <div>{lastName}</div>
-        <div>{email}</div>
-        <div>
+    <div >
+      <h1 className="error">{getError}</h1>
+      <h2>Profile Details</h2>
+      <div className="profileContainer">
+        <div>First Name: {firstName}</div>
+        <div>Last Name: {lastName}</div>
+        <div>Email: {email}</div>
+        <div>Password: 
           *********
           <button
             onClick={() => {
               setIsOpenPassword(true);
             }}
           >
-            Change Password
+            <span>Change Password</span>
           </button>
           <ChangePassword
             open={isOpenPassword}
@@ -123,7 +124,7 @@ export function ProfileDetails() {
             field="password"
           ></ChangePassword>
         </div>
-        <div>
+        <div>Street: 
           {street}
           <button
             onClick={() => {
@@ -143,6 +144,7 @@ export function ProfileDetails() {
           ></ChangeAddress>
         </div>
         <div>
+          Postal Code:
           {postal}
           <button
             onClick={() => {
@@ -163,6 +165,6 @@ export function ProfileDetails() {
           ></ChangeAddress>
         </div>
       </div>
-    </>
+    </div>
   );
 }

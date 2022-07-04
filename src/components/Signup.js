@@ -63,7 +63,7 @@ export function Signup() {
   };
 
   return (
-    <>
+    <div className="formContainer">
       <h2>Signup</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="first_name">First Name:</label>
@@ -116,6 +116,6 @@ export function Signup() {
         ></input>
         <button type="submit">Submit</button>
       </form>
-    </>
+    </div>
   );
 }

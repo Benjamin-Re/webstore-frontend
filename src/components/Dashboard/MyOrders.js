@@ -74,24 +74,28 @@ export function MyOrders() {
 
   return (
     <>
-      <h1>My Orders</h1>
-      <div className="orders-container">
+      <h1>Your Orders</h1>
+      <div className="orderContainer">
         {getOrders.map((order) => {
           return (
             <div className="order">
-              Date: {dateResolver(new Date(order.date))}, 
-              Total: {order.total}€, 
+              <div>Date: {dateResolver(new Date(order.date))}</div>
+              <div>Total: {order.total}€</div> 
               <br></br>
               Products:{" "} 
+              <ol>
               {order.products.map((product) => {
                 return (
+                  <>
+                  <li>{product.name}{" "} </li>
                   <ul>
-                    <li>{product.name},{" "} </li>
-                    <li>{product.price}€,{" "} </li>
-                    <li>{product.quantity} units {" "}</li>
-                  </ul>
+                      <li>{product.price}€{" "} </li>
+                      <li>{product.quantity} units {" "}</li>
+                    </ul>
+                  </>
                 );
               })}
+              </ol>
             </div>
           );
         })}

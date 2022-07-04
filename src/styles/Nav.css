@@ -88,6 +88,6 @@ ul {
 }
 
 a {
-  color: white;
+  color: var(--strong);
   text-decoration: none;
 }

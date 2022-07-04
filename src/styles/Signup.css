@@ -1,6 +1,20 @@
-form {
+
+.formContainer {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    align-items: center;
 }
 
+form {
+    display:flex;
+    flex-direction: column;
+    width: 200px;
+    gap: 10px;
+}
+
+input {
+    font-family: inherit;
+    font-size: 100%;
+    border: none;
+    background-color: rgb(232, 240, 254);
+}

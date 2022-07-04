@@ -35,13 +35,13 @@ export function Nav() {
       <div className="responsiveContainer">
         <ul className="responsive">
           <li>
-            <Link to="/products">Products</Link>
+            <Link to="/products" onClick={handleBurger}>Products</Link>
           </li>
           <li>
-            <Link to="/auth">{getLoggedIn ? "Dashboard" : "Login"}</Link>
+            <Link to="/auth" onClick={handleBurger}>{getLoggedIn ? "Dashboard" : "Login"}</Link>
           </li>
           <li>
-            <Link to="/cart">Cart #{cartQuantity}</Link>
+            <Link to="/cart" onClick={handleBurger}>Cart #{cartQuantity}</Link>
           </li>
         </ul>
       </div>

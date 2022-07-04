@@ -52,7 +52,7 @@ export function Login() {
   };
 
   return (
-    <>
+    <div className="formContainer">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>
@@ -74,6 +74,6 @@ export function Login() {
       <div>
         Not a user yet? <Link to="/signup">Signup</Link>
       </div>
-    </>
+    </div>
   );
 }
