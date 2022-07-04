@@ -36,7 +36,7 @@ export function ProfileDetails() {
 
   useEffect(() => {
     // Fetch the current user
-    fetch("http://localhost:8000/users/" + getUserId, {
+    fetch("https://enigmatic-temple-40493.herokuapp.com/users/" + getUserId, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +81,7 @@ export function ProfileDetails() {
         postal: postal,
       },
     };
-    fetch("http://localhost:8000/users/profile/" + getUserId, {
+    fetch("https://enigmatic-temple-40493.herokuapp.com/users/profile/" + getUserId, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updateData),
@@ -166,79 +166,3 @@ export function ProfileDetails() {
     </>
   );
 }
-
-//     // POST the new user
-//     // http://localhost:8000
-//     // https://enigmatic-temple-40493.herokuapp.com
-//     fetch("http://localhost:8000/users/signup", {
-//       method: "PATCH",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify(newUser),
-//     })
-//       .then((res) => {
-//         return res.json();
-//       })
-//       .then((data) => {
-//         navigate("/auth");
-//       })
-//       .catch((error) => console.log(error));
-//   };
-
-//   return (
-//     <>
-//       <h2>Change details</h2>
-
-//       <form onSubmit={handleSubmit}>
-//         <label htmlFor="first_name">First Name:</label>
-//         <input
-//           type="text"
-//           name="first_name"
-//           id="first_name"
-
-//           onChange={handleFirstName}
-//         ></input>
-//         <label htmlFor="last_name">Last Name</label>
-//         <input
-
-//           type="text"
-//           name="last_name"
-//           id="last_name"
-//           onChange={handleLastName}
-//         ></input>
-//         <label htmlFor="email">Email</label>
-//         <input
-
-//           type="email"
-//           name="email"
-//           id="email"
-//           onChange={handleEmail}
-//         ></input>
-//         <label htmlFor="password">Password</label>
-//         <input
-
-//           type="password"
-//           name="password"
-//           id="password"
-//           onChange={handlePassword}
-//         ></input>
-//         <label htmlFor="street">Street</label>
-//         <input
-
-//           type="text"
-//           name="street"
-//           id="street"
-//           onChange={handleStreet}
-//         ></input>
-//         <label htmlFor="postal">Postal Code</label>
-//         <input
-
-//           type="text"
-//           name="postal"
-//           id="postal"
-//           onChange={handlePostal}
-//         ></input>
-//         <button type="submit">Submit</button>
-//       </form>
-//     </>
-//   );
-// }

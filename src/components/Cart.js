@@ -93,7 +93,7 @@ export function Cart() {
     // Put request to user, to add the order to him
     // http://localhost:8000
     // https://enigmatic-temple-40493.herokuapp.com
-    fetch("http://localhost:8000/users/" + userId, {
+    fetch("https://enigmatic-temple-40493.herokuapp.com/users/" + userId, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -114,7 +114,7 @@ export function Cart() {
     getCart.map((product) => {
       const id = product.id;
       const quantity = product.quantity * -1;
-      fetch("http://localhost:8000/products/" + id, {
+      fetch("https://enigmatic-temple-40493.herokuapp.com/products" + id, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

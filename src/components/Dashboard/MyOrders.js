@@ -11,7 +11,7 @@ export function MyOrders() {
   // https://enigmatic-temple-40493.herokuapp.com/users
   // http://localhost:8000/users
   useEffect(() => {
-    fetch(`http://localhost:8000/users/` + getUserId, {
+    fetch(`https://enigmatic-temple-40493.herokuapp.com/users/` + getUserId, {
       method: "Get",
       headers: {
         "Content-Type": "application/json",
