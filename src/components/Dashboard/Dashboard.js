@@ -56,7 +56,7 @@ export function Dashboard() {
   return (
     <div className="dashContainer">
       <div>
-        <h1>Welcome to your dashboard <span style={nameStyle}>{getFirstName}</span></h1>
+        <h2>Welcome to your dashboard <span style={nameStyle}>{getFirstName}</span></h2>
         <img src={getImage} alt="avatar"></img>
       </div>
       <div>

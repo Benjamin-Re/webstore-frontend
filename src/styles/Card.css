@@ -1,6 +1,4 @@
-.card {
-    
-}
+
 
 .card img {
     object-fit: cover;
@@ -10,8 +8,19 @@
 
 .card .lower {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
     justify-content: space-between;
     padding: 1rem;
     background-color: var(--middle);
+}
+
+.article {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonSection {
+    display: flex;
+    justify-content: center;
 }

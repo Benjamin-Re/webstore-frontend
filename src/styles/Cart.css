@@ -1,0 +1,26 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.cartItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.productImage {
+    height: 100px;
+    width: 100px;
+}
+
+.article {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonSection {
+    display: flex;
+    justify-content: center;
+}

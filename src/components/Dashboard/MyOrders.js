@@ -74,7 +74,7 @@ export function MyOrders() {
 
   return (
     <>
-      <h1>Your Orders</h1>
+      <h2>Your Orders</h2>
       <div className="orderContainer">
         {getOrders.map((order) => {
           return (

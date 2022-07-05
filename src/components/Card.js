@@ -10,11 +10,13 @@ export function Card(props) {
   return (
     <>
       <div className="card" id={props.id}>
-        <div className="upper"><img src={props.imgSrc} alt="a chair"></img></div>
+        <div className="upper"><img src={props.imgSrc} alt="depiction of product"></img></div>
         <div className="lower">
-          {props.name}, {props.price}€
+          <div className="article">
+            <div>{props.name}</div> <div>{props.price}€</div>
+          </div>
           {props.stock === 0 ? (<div>Sold Out</div>) : (
-            <>
+            <div className="buttonSection">
             {quantity === 0 ? (
               <button onClick={addToCart}>Add to Cart</button>
             ) : (
@@ -24,7 +26,7 @@ export function Card(props) {
                 <button onClick={()=>{decrease(props.id)}} >-</button>
               </div>
             )}
-            </>
+            </div>
           )}
         </div>
       </div>
@@ -37,7 +39,8 @@ function addToCart() {
         name: props.name,
         price: props.price,
         quantity: 1,
-        stock: props.stock
+        stock: props.stock,
+        imgSrc: props.imgSrc
       };
   setCart(prev=>{
     return [...prev, product];

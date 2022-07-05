@@ -1,6 +1,7 @@
 import { useMyContext } from "../Context";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import '../styles/Cart.css';
 
 export function Cart() {
   const { cart, logged, token, userId, increase, decrease } =
@@ -19,11 +20,16 @@ export function Cart() {
   return (
     <>
       <h2>Cart</h2>
-      <ul>
+      <div className="cart">
         {getCart.map((product) => {
           return (
-            <li>
-              {product.name}, {product.price}€, {product.quantity} units,
+           <div className="cartItem">
+              {console.log(product.imgSrc)}
+              <img className="productImage" src={product.imgSrc} alt="Depiction of a product"></img>
+              <div className="article">
+                {product.name} {product.price}€ 
+              </div>
+              <div className="buttonSection">
               <button
                 onClick={() => {
                   increase(product.id, product.stock);
@@ -31,6 +37,7 @@ export function Cart() {
               >
                 +
               </button>
+              {product.quantity}
               <button
                 onClick={() => {
                   decrease(product.id);
@@ -38,10 +45,11 @@ export function Cart() {
               >
                 -
               </button>
-            </li>
+              </div>
+            </div>
           );
         })}
-      </ul>
+      </div>
       <div className="total">Total: {getTotal()}</div>
       <button onClick={handleCheckout}>Checkout</button>
     </>
