@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 30px;    
 }
 
 .dashContainer div {
@@ -15,4 +15,10 @@
 .dashContainer img {
     width: 100px;
     height: 100px;
+}
+
+.dashContainer div+div {
+    display: flex;
+    flex-direction: column;
+
 }

@@ -26,6 +26,7 @@ button {
   opacity: 1;
   transition: all 0.2s linear;
   font-family: inherit;
+  width: 6rem;
 }
 
 button:hover{

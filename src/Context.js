@@ -31,25 +31,29 @@ export function ContextProvider({ children }) {
       });
   }, []);
 
-  // // Store user login data (id, loggedin, token) in localStorage
-  // useEffect(()=>{
-  //   let data = localStorage.getItem("user-data");
-  //   if(data){
-  //     setLoggedIn(JSON.parse(data.loggedIn));
-  //     setToken(JSON.parse(data.token));
-  //     setUserId(JSON.parse(data.userId));
-  //   }
-  // }, []);
 
-  // // Save the data on every render
-  // useEffect(()=>{
-  //   let data = {
-  //     loggedIn: getLoggedIn,
-  //     token: getToken,
-  //     userId: getUserId,
-  //   }
-  //   localStorage.setItem("user-data", JSON.stringify(data));
-  // })
+  // Store user login data (id, loggedin, token) in session
+  useEffect(()=>{
+    let data = sessionStorage.getItem("user-data");
+    if(data){
+      data = JSON.parse(data);
+      setLoggedIn(data.loggedIn);
+      setToken(data.token);
+      setUserId(data.userId);
+      setCart(data.cart);
+    }
+  }, []);
+
+  // Save the data on every render
+  useEffect(()=>{
+    let data = {
+      loggedIn: getLoggedIn,
+      token: getToken,
+      userId: getUserId,
+      cart: getCart,
+    }
+    sessionStorage.setItem("user-data", JSON.stringify(data));
+  })
 
 
 

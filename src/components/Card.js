@@ -7,9 +7,6 @@ export function Card(props) {
   const [getCart, setCart] = cart;
   const quantity = getQuantity(props.id);
 
-  
-
-
   return (
     <>
       <div className="card" id={props.id}>
@@ -23,13 +20,12 @@ export function Card(props) {
             ) : (
               <div>
                 <button onClick={()=>{increase(props.id, props.stock)}} >+</button>
-                <span></span>
+                <span>{quantity}</span>
                 <button onClick={()=>{decrease(props.id)}} >-</button>
               </div>
             )}
             </>
           )}
-          {quantity}
         </div>
       </div>
     </>
@@ -47,44 +43,5 @@ function addToCart() {
     return [...prev, product];
   })
 }
-  // function increase() {
-  //   let quantity = getQuantity + 1;
-  //   setQuantity(quantity);
-  //   const product = {
-  //     id: props.id,
-  //     name: props.name,
-  //     price: props.price,
-  //     quantity: quantity,
-  //   };
-  //   console.log(product)
-  //   setCart((prevState) => {
-  //     // Always create a new State from the old one, dont manipl the old one
-  //     let newState = prevState;
-  //     newState = newState.filter((elem) => {
-  //       return elem.id !== product.id;
-  //     });
-  //     newState.push(product);
-  //     return newState;
-  //   });
-  // }
 
-  // function decrease() {
-  //   let quantity = getQuantity - 1;
-  //   setQuantity(quantity);
-  //   const product = {
-  //     id: props.id,
-  //     name: props.name,
-  //     price: props.price,
-  //     quantity: quantity,
-  //   };
-  //   setCart((prevState) => {
-  //     let newState = prevState;
-  //     newState = newState.filter((elem) => {
-  //       return elem.id !== product.id;
-  //     });
-  //     newState.push(product);
-  //     console.log(newState);
-  //     return newState;
-  //   });
-  // }
 }

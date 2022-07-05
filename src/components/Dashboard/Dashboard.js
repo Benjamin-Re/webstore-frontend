@@ -67,7 +67,7 @@ export function Dashboard() {
           <h3>Change profile details</h3>
         </Link>
         <button onClick={handleLogout}>
-          <h3>Logout</h3>
+          Logout
         </button>
       </div>
     </div>
