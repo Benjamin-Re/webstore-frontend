@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 export function Cart() {
-  const { cart, logged, token, userId, getQuantity, increase, decrease } =
+  const { cart, logged, token, userId, increase, decrease } =
     useMyContext();
   const [getCart, setCart] = cart;
   const [getLoggedIn, setLoggedIn] = logged;
@@ -26,7 +26,7 @@ export function Cart() {
               {product.name}, {product.price}€, {product.quantity} units,
               <button
                 onClick={() => {
-                  increase(product.id);
+                  increase(product.id, product.stock);
                 }}
               >
                 +
@@ -47,20 +47,7 @@ export function Cart() {
     </>
   );
 
-  // function removePost(product) {
-  //   let itemQuant = getQuant(1);
-  //   console.log(itemQuant);
-  //   // setCart(prevState=>{
-  //   //   let newState = prevState;
-  //   //   console.log(e.target.id)
-  //   //   newState = newState.filter(elem=>{
-  //   //     console.log(elem.id)
-  //   //     return elem.id === e.target.id;
-  //   //   });
-  //   //   console.log(newState)
-  //   //   return newState;
-  //   // });
-  // }
+
 
   function getTotal() {
     return getCart.reduce((total, current) => {

@@ -41,6 +41,7 @@ function addToCart() {
         name: props.name,
         price: props.price,
         quantity: 1,
+        stock: props.stock
       };
   setCart(prev=>{
     return [...prev, product];

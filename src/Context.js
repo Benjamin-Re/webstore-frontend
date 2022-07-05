@@ -21,8 +21,15 @@ export function ContextProvider({ children }) {
   const [getLoggedIn, setLoggedIn] = useState(false);
   const [getToken, setToken] = useState();
   const [getUserId, setUserId] = useState("");
+  const [getProducts, setProducts] = useState([]);
 
-
+  useEffect(() => {
+    fetch(`https://enigmatic-temple-40493.herokuapp.com/products`)
+      .then((res) => res.json())
+      .then((json) => {
+        setProducts(json.data);
+      });
+  }, []);
 
   // // Store user login data (id, loggedin, token) in localStorage
   // useEffect(()=>{
@@ -51,7 +58,7 @@ export function ContextProvider({ children }) {
   }
 
   function increaseQuantity(id, stock) {
-    console.log(stock)
+   console.log(stock);
     setCart(currItems => {
      
         return currItems.map(item => {
@@ -98,6 +105,7 @@ export function ContextProvider({ children }) {
         increase: increaseQuantity,
         decrease: decreaseCartQuantity,
         cartQuantity,
+        products: [getProducts, setProducts]
       }}
     >
       {" "}
