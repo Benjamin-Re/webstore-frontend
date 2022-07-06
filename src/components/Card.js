@@ -21,9 +21,9 @@ export function Card(props) {
               <button onClick={addToCart}>Add to Cart</button>
             ) : (
               <div>
-                <button onClick={()=>{increase(props.id, props.stock)}} >+</button>
-                <span>{quantity}</span>
                 <button onClick={()=>{decrease(props.id)}} >-</button>
+                <span>{quantity}</span>
+                <button onClick={()=>{increase(props.id, props.stock)}} >+</button>
               </div>
             )}
             </div>

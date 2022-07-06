@@ -32,26 +32,26 @@ export function Cart() {
               <div className="buttonSection">
               <button
                 onClick={() => {
-                  increase(product.id, product.stock);
-                }}
-              >
-                +
-              </button>
-              {product.quantity}
-              <button
-                onClick={() => {
                   decrease(product.id);
                 }}
               >
                 -
+              </button>
+              {product.quantity}
+              <button
+                onClick={() => {
+                  increase(product.id, product.stock);
+                }}
+              >
+                +
               </button>
               </div>
             </div>
           );
         })}
       </div>
-      <div className="total">Total: {getTotal()}</div>
-      <button onClick={handleCheckout}>Checkout</button>
+      <div className="total">Total: {getTotal()}€</div>
+      <button onClick={handleCheckout}>Buy Now</button>
     </>
   );
 

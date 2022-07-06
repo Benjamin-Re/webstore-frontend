@@ -45,7 +45,7 @@ h2 {
 
 .sec2Intro {
   margin-top: auto;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 #section2 {
@@ -56,6 +56,22 @@ h2 {
   justify-content: flex-start;
 }
 
+#section3 {
+  background-color: var(--main);
+  min-width: 100%;
+  min-height: 50rem;
+  display: flex; 
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  padding: 1rem;
+}
+
+.materials {
+  display: flex;
+}
 .customerCard {
   height: 400px;
   display: flex;
@@ -80,17 +96,8 @@ h2 {
   font-style: italic;
 }
 
-#section3 {
-  background-color: var(--main);
-  min-width: 100%;
-  min-height: 60rem;
-  display: flex; 
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  gap: 14px;
-  padding: 1rem;
+.sec3Card {
+  width: 350px;
 }
 
 .sec3Card img {
@@ -104,18 +111,26 @@ h2 {
 /*Large*/
 @media (min-width: 961px) {
   #section1,#section2,#section3  {
-    font-size: 24px;
+    font-size: 14px;
+  }
+  .customerCard img {
+    max-width: 300px;
+    max-height: 450px;
   }
 }
 
 /*Medium*/
 @media (max-width: 960px) {
-  #section3 {
+  .materials {
     flex-direction: column;
   }
   .sec3Card img {
     width: 250px;
     height: 250px;
+  }
+  .customerCard img {
+    max-width: 250px;
+    max-height: 400px;
   }
 }
 /*Small*/

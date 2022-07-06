@@ -61,10 +61,10 @@ export function Dashboard() {
       </div>
       <div>
         <Link to="/my-orders">
-          <h3>Your past orders</h3>
+          <h3>Check your previous orders</h3>
         </Link>
         <Link to="/profile-details">
-          <h3>Change profile details</h3>
+          <h3>Change your profile details</h3>
         </Link>
         <button onClick={handleLogout}>
           Logout

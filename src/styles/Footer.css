@@ -1,0 +1,30 @@
+.footer {
+    height: 20rem;
+    background-color: var(--middle);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.social * {
+    font-size: 3rem;
+   
+} 
+
+.address {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.social *:hover{
+   font-size: 5rem;
+}
