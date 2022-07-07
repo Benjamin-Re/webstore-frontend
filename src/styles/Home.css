@@ -17,7 +17,7 @@
   min-width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 10px;
   font-weight: 800;
@@ -98,6 +98,7 @@ h2 {
 
 .sec3Card {
   width: 350px;
+  margin-bottom: 20px;
 }
 
 .sec3Card img {
@@ -122,8 +123,10 @@ h2 {
 /*Medium*/
 @media (max-width: 960px) {
   .materials {
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
   }
+
   .sec3Card img {
     width: 250px;
     height: 250px;

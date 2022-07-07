@@ -21,12 +21,12 @@ export function Footer(){
                 <div>555-555-222-111</div>
             </div>
             <div className="social">
-                <TiSocialTwitter/>
-                <TiSocialFacebook/>
-                <TiSocialGithub/>
-                <TiSocialInstagram/>
-                <TiSocialYoutube/>
-                <TiSocialLinkedin/>
+                <div><TiSocialTwitter/></div>
+                <div><TiSocialFacebook/></div>
+                <div><TiSocialGithub/></div>
+               <div> <TiSocialInstagram/></div>
+               <div> <TiSocialYoutube/></div>
+                <div><TiSocialLinkedin/></div>
             </div>
         </div>
     )
