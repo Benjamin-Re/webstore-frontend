@@ -1,9 +1,34 @@
 @import './styles/colors.css';
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Lato&family=Rubik:wght@300&display=swap');
+
 
 * {
   box-sizing: border-box;
+  font-family: Lato;
   font-size: 14px;
-  font-family: monospace;
+}
+
+h2, h1 {
+  font-family: Rubik;
+}
+
+
+@media (min-width: 800px) {
+  * {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 600px) {
+  * {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 599px) {
+  * {
+    font-size: 14px;
+  }
 }
 
 body {

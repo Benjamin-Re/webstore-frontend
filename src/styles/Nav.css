@@ -56,6 +56,11 @@ a:hover {
   display: flex;
   flex-direction: column;
 }
+
+.responsiveContainer li {
+  font-size: 20px !important;
+}
+
 /*Small Screens*/
 @media (max-width: 550px) {
   .desktop {

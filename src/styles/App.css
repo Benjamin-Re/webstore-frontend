@@ -1,15 +1,7 @@
-html {
 
-}
-
-html, body{
-  scroll-behavior: smooth;
-  height: 100%;
+#root {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-
-.container {
-  height: 80%;
-}

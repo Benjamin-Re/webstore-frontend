@@ -15,7 +15,7 @@ import { Footer } from './components/Footer';
 
 function App() {
   return (
-    <>
+    <div id="root">
       <ContextProvider> {/*Provides getCartState and setCart*/}
         <Nav></Nav>
         <div className="container">
@@ -31,8 +31,9 @@ function App() {
             <Route path="/contact" element={<Footer />} />
           </Routes>
         </div>
+        <Footer></Footer>
       </ContextProvider>
-    </>
+    </div>
   );
 }
  

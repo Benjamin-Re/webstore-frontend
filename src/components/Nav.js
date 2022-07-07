@@ -34,11 +34,11 @@ export function Nav() {
           </li>
         </ul>
         <Link to="/cart">
-          <FaShoppingCart style={shoppingStyle}/>#{cartQuantity}
+          <FaShoppingCart style={shoppingStyle} size={28}/>#{cartQuantity}
         </Link>
         </div>
         <div className="hamburger">
-          <FaBars style={burgerStyle} onClick={handleBurger} />
+          <FaBars style={burgerStyle} size={42} onClick={handleBurger} />
         </div>
       </nav>
       <div className="responsiveContainer">

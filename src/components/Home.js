@@ -36,7 +36,7 @@ export function Home() {
         <div style={lineStyle}><h2>What our customers think</h2></div>
         
         <div className="customerCard">
-          <img src="/img/customer1.jpg" alt="customer"></img>
+          <img src="http://localhost:8000/brush.jpg" alt="customer"></img>
           <div className="customerVoice">
             <h1>My all time favourite store</h1>I buy here all the time. You
             should too, if you want the best value for your money. <br></br>
@@ -84,7 +84,7 @@ export function Home() {
         </div>
         </div>
       </div>
-      <Footer></Footer>
+      
     </div>
   );
 }
