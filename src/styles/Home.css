@@ -28,22 +28,18 @@
   margin-top: 200px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-h2 {
-  text-align: center;
-  font-size: 2rem;
+.heroText {
+  font-size: 3rem;
 }
 
-.bigLink {
-  text-align: center;
-  text-decoration: none;
-  background-color: var(--strong);
-  padding: 14px;
-  border-radius: 0.5rem;
+.callToAction {
+  padding: 26px 24px;
+  width: 20rem;
+  font-size: 1.5rem;
 }
-
-
 
 #section2 {
   max-width: 100%;
@@ -51,6 +47,7 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  background-color: var(--background);
 }
 
 #section3 {
@@ -64,6 +61,7 @@ h2 {
   text-align: center;
   gap: 14px;
   padding: 1rem;
+  color: white;
 }
 
 .materials {
@@ -137,6 +135,9 @@ h2 {
 }
 /*Small*/
 @media (max-width: 400px) {
+  #section1 {
+    height: 50rem;
+  }
   #section3 {
     flex-direction: column;
   }

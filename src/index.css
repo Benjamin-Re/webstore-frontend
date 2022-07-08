@@ -8,10 +8,14 @@
   font-size: 14px;
 }
 
-h2, h1 {
+h2, h1, h3 {
   font-family: Rubik;
 }
 
+h2 {
+  text-align: center;
+  font-size: 2rem;
+}
 
 @media (min-width: 800px) {
   * {
@@ -43,14 +47,22 @@ body {
 }
 
 button {
-  background-color: var(--strong);
+  background-color: var(--button);
   border: none;
-  padding: 4px 3px;
+  border-radius: 5px;
+  padding: 8px 8px;
   color: white;
   font-size: 16px;
   opacity: 1;
   transition: all 0.2s linear;
   font-family: inherit;
+}
+
+.plusMinus {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 10px;
 }
 
 button:hover{

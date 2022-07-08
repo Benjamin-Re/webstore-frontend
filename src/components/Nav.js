@@ -24,13 +24,13 @@ export function Nav() {
         <div className="rightSection">
         <ul className="desktop">
           <li>
-            <Link to="/products">Products</Link>
+            <Link className="link" to="/products">Products</Link>
           </li>
           <li>
-            <Link to="/auth">{getLoggedIn ? "Dashboard" : "Login"}</Link>
+            <Link className="link" to="/auth">{getLoggedIn ? "Dashboard" : "Login"}</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link className="link" to="/contact">Contact</Link>
           </li>
         </ul>
         <Link to="/cart">
@@ -41,28 +41,30 @@ export function Nav() {
           <FaBars style={burgerStyle} size={42} onClick={handleBurger} />
         </div>
       </nav>
-      <div className="responsiveContainer">
-        <ul className="responsive">
+      <div className="dropdown">
+        <div className="dropdownMenu">
+          <ul>
           <li>
-            <Link to="/products" onClick={handleBurger}>
+            <Link className="link dropLink" to="/products" onClick={handleBurger}>
               Products
             </Link>
           </li>
           <li>
-            <Link to="/auth" onClick={handleBurger}>
+            <Link className="link dropLink" to="/auth" onClick={handleBurger}>
               {getLoggedIn ? "Dashboard" : "Login"}
             </Link>
           </li>
           <li>
-            <Link to="/contact" onClick={handleBurger}>Contact</Link>
+            <Link className="link dropLink" to="/contact" onClick={handleBurger}>Contact</Link>
           </li>
-        </ul>
+          </ul>
+        </div>
       </div>
     </>
   );
 
   function handleBurger() {
-    const drop = document.querySelector(".responsiveContainer");
+    const drop = document.querySelector(".dropdownMenu");
     drop.classList.toggle("show");
   }
 }

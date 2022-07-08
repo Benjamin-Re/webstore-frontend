@@ -1,20 +1,35 @@
 .nav {
   position: relative;
   background-color: var(--navi);
-  color: white;
+  color: #000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
+  padding: 2rem;
   height: 20%;
   max-width: 100%;
   box-shadow: 0 1px 6px 2px black;
   z-index: 1;
 }
 
-.nav a {
+.link {
   color: inherit;
-  text-decoration: none;
+  position: relative;
+}
+
+.link:after {
+  content: "";
+  background-color: gold;
+  height: 6px;
+  position: absolute;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: .2s;
+}
+
+.link:hover:after {
+  width: 100%;
 }
 
 .nav ul,
@@ -52,14 +67,7 @@ a:hover {
   position: relative;
 }
 
-.responsive {
-  display: flex;
-  flex-direction: column;
-}
 
-.responsiveContainer li {
-  font-size: 20px !important;
-}
 
 /*Small Screens*/
 @media (max-width: 550px) {
@@ -81,7 +89,7 @@ a:hover {
 
 /*Medium and Large Screens*/
 @media (min-width: 551px) {
-  .responsiveContainer {
+  .dropdown {
     display: none;
   }
   .nav * {
@@ -95,24 +103,37 @@ a:hover {
   }
 }
 
+/*Dropdown container*/
+.dropdown {
+  background-color: var(--navi);
+  position: relative;
+}
+
+/*Dropdown menu*/
+.dropdownMenu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + .25rem);
+  background-color: var(--navi);
+  padding: .75rem;
+  border-radius: .25rem;
+  box-shadow: 0 2px 5px 0 #000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 150ms linear, transform 150ms linear;
+  
+}
+
+.dropLink {
+  font-size: 1.5rem;
+}
+
 
 .show {
-  visibility: visible !important;
-  display: block;
+  transform: translateY(0px);
   opacity: 1 !important;
-  /* display: none !important; */
 }
 
-.responsiveContainer {
-  background-color: var(--navi);
-  position: absolute;
-  width: 100%;
-  box-shadow: 0 1px 6px 2px black;
-  padding: 1rem;
-  transition: all 0.3s linear;
-  visibility: hidden;
-  opacity: 0;
-}
 
 a {
   color: var(--strong);

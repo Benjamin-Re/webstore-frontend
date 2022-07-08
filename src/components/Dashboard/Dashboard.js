@@ -2,6 +2,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useMyContext } from "../../Context";
 import { useEffect, useState } from "react";
 import "../../styles/Dashboard.css";
+import { TbFileInvoice } from 'react-icons/tb';
+import { CgProfile } from 'react-icons/cg';
+import { AiOutlineHeart } from 'react-icons/ai';
 
 export function Dashboard() {
   const { cart, logged, token, userId } = useMyContext();
@@ -15,8 +18,8 @@ export function Dashboard() {
   const [getImage, setImage] = useState();
   const nameStyle = {
     color: "orange",
-    fontSize: "2rem"
-  }
+    fontSize: "2rem",
+  };
 
   useEffect(() => {
     // Fetch the current user
@@ -41,34 +44,42 @@ export function Dashboard() {
 
   // Get user avatar
   const fetchImage = async () => {
-    let initials = getFirstName[0]+getLastName[0];
+    let initials = getFirstName[0] + getLastName[0];
     console.log(initials);
-    const res = await fetch(`https://avatars.dicebear.com/api/initials/${initials}.svg`);
+    const res = await fetch(
+      `https://avatars.dicebear.com/api/initials/${initials}.svg`
+    );
     const imageBlob = await res.blob();
     const imageObjectURL = URL.createObjectURL(imageBlob);
     setImage(imageObjectURL);
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchImage();
-  }, [getFirstName])
+  }, [getFirstName]);
 
   return (
     <div className="dashContainer">
       <div>
-        <h2>Welcome to your dashboard <span style={nameStyle}>{getFirstName}</span></h2>
-        <img src={getImage} alt="avatar"></img>
+        <h2>
+          Welcome to your dashboard{" "}
+          <span style={nameStyle}>{getFirstName}</span>
+        </h2>
+        <div className="iconLogout">
+          <img src={getImage} alt="avatar"></img>
+          <button onClick={handleLogout}>Logout</button>
+        </div>
       </div>
       <div>
         <Link to="/my-orders">
-          <h3>Check your previous orders</h3>
+          <h3>Check your previous orders <TbFileInvoice/></h3>
         </Link>
         <Link to="/profile-details">
-          <h3>Change your profile details</h3>
+          <h3>Change your profile details  <CgProfile/></h3>
         </Link>
-        <button onClick={handleLogout}>
-          Logout
-        </button>
+        <Link to="/products">
+          <h3>Your wishlist  <AiOutlineHeart/></h3>
+        </Link>
       </div>
     </div>
   );

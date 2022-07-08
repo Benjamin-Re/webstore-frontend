@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/Home.css";
 import { AiFillStar } from "react-icons/ai";
-import { Footer } from './Footer';
+
 
 export function Home() {
   const starStyle = {
@@ -15,26 +15,26 @@ export function Home() {
     position: "relative",
     alignSelf: "center"
   }
+
   return (
     <div className="homeContainer">
-
       {/*Section 1*/}
       <div id="section1">
         <div className="top">
-          <h2>
+          <h2 className="heroText">
             We don't sell art,<br></br> we are art
           </h2>
-          <button className="bigLink">
           <Link to="/products">
+          <button className="callToAction">
             Shop now
-          </Link>
           </button>
+          </Link>
         </div>
       </div>
       {/*Section 2*/}
       <div id="section2">
-        <div style={lineStyle}><h2>What our customers think</h2></div>
-        
+      <h2>What our customers think</h2>
+        <div style={lineStyle}></div>
         <div className="customerCard">
           <img src="http://localhost:8000/brush.jpg" alt="customer"></img>
           <div className="customerVoice">

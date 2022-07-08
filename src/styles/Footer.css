@@ -1,8 +1,7 @@
 .footer {
-  
     margin-top: auto;
-    height: 20rem;
-    background-color: var(--middle);
+    height: 17rem;
+    background-color: var(--navi);
     display: flex;
     flex-direction: column;
     gap: 2rem;

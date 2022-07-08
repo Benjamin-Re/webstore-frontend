@@ -1,6 +1,6 @@
 import { useMyContext } from "../../Context";
 import { useEffect, useState } from "react";
-import css from "../../styles/MyOrders.css";
+import "../../styles/MyOrders.css";
 
 export function MyOrders() {
   const { cart, logged, token, userId } = useMyContext();

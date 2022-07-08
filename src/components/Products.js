@@ -11,8 +11,8 @@ export function Products() {
 
   return (
     <>
-      <h2>Products</h2>
       <div className="containerContainer">
+      <h2>Products</h2>
         <div className="products-container">
           {getProducts.map((product) => {
             return (

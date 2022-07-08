@@ -1,8 +1,15 @@
 :root{
-    --navi: #070707;
-    --main: #553555;
-    --button: #755B69;
-    --middle: #96C5B0;
-    --strong: #ADF1D2;
+    --navi: #ffffff;
+    --main: #003459;
+    --button: #00a8e8;
+    --background: #e7ecef;
   }
   
+  /* :root{
+    --navi: #023047;
+    --main: #8ecae6;
+    --button: #ffb703;
+    --middle: #219ebc;
+    --strong: #fb8500;
+  }
+   */

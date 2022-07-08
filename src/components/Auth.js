@@ -7,8 +7,8 @@ export function Auth (props) {
     const [getLoggedIn, setLoggedIn] = logged;
     
     return (
-        <div>
+        <>
             {getLoggedIn ? <Dashboard/> : <Login/>}
-        </div>
+        </>
     )
 } 

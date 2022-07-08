@@ -1,11 +1,10 @@
 import { useMyContext } from "../Context";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import '../styles/Cart.css';
+import "../styles/Cart.css";
 
 export function Cart() {
-  const { cart, logged, token, userId, increase, decrease } =
-    useMyContext();
+  const { cart, logged, token, userId, increase, decrease } = useMyContext();
   const [getCart, setCart] = cart;
   const [getLoggedIn, setLoggedIn] = logged;
   const [getUserId, setUserId] = userId;
@@ -13,49 +12,92 @@ export function Cart() {
 
   const navigate = useNavigate();
 
+  const tdStyle = {
+    textAlign: "center",
+  }
+
   useEffect(() => {
     console.log(getCart);
   }, [getCart]);
 
   return (
-    <>
+    <div className="cartContainer">
       <h2>Cart</h2>
       <div className="cart">
-        {getCart.map((product) => {
-          return (
-           <div className="cartItem">
-              {console.log(product.imgSrc)}
-              <img className="productImage" src={product.imgSrc} alt="Depiction of a product"></img>
-              <div className="article">
-                {product.name} {product.price}€ 
-              </div>
-              <div className="buttonSection">
-              <button
-                onClick={() => {
-                  decrease(product.id);
-                }}
-              >
-                -
-              </button>
-              {product.quantity}
-              <button
-                onClick={() => {
-                  increase(product.id, product.stock);
-                }}
-              >
-                +
-              </button>
-              </div>
-            </div>
-          );
-        })}
+        <table>
+          {getCart.map((product) => {
+            return (
+              <tr>
+                <td>
+                  <img
+                    className="productImage"
+                    src={product.imgSrc}
+                    alt="Depiction of a product"
+                  ></img>
+                </td>
+                <td>{product.name}</td>
+                <td>{product.price}€</td>
+                <td>
+                  <button
+                    className="plusMinus"
+                    onClick={() => {
+                      decrease(product.id);
+                    }}
+                  >
+                    -
+                  </button>
+                </td>
+                <td>{product.quantity}</td>
+                <td>
+                  <button
+                    className="plusMinus"
+                    onClick={() => {
+                      increase(product.id, product.stock);
+                    }}
+                  >
+                    +
+                  </button>
+                </td>
+              </tr>
+              //  <div className="cartItem">
+              //     <img className="productImage" src={product.imgSrc} alt="Depiction of a product"></img>
+              //     <div className="article">
+              //       {product.name} {product.price}€
+              //     </div>
+              //     <div className="buttonSection">
+              //     <button className="plusMinus"
+              //       onClick={() => {
+              //         decrease(product.id);
+              //       }}
+              //     >
+              //       -
+              //     </button>
+              //     <span>{product.quantity}</span>
+              // <button className="plusMinus"
+              //   onClick={() => {
+              //     increase(product.id, product.stock);
+              //   }}
+              // >
+              //   +
+              // </button>
+              //     </div>
+              //   </div>
+            );
+          })}
+          <tr>
+            <td colSpan={6} style={tdStyle}>
+              <div className="total">Total: {getTotal()}€</div>
+            </td>
+          </tr>
+          <tr>
+            <td colSpan={6} style={tdStyle}>
+              <button style={{width: "100%"}}onClick={handleCheckout}>Buy Now</button>
+            </td>
+          </tr>
+        </table>
       </div>
-      <div className="total">Total: {getTotal()}€</div>
-      <button onClick={handleCheckout}>Buy Now</button>
-    </>
+    </div>
   );
-
-
 
   function getTotal() {
     return getCart.reduce((total, current) => {
@@ -71,7 +113,7 @@ export function Cart() {
       navigate("/auth");
       return -1;
     }
-    if(getCart.length<1){
+    if (getCart.length < 1) {
       navigate("/products");
       return -1;
     }
