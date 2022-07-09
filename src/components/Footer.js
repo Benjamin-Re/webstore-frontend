@@ -5,6 +5,7 @@ import {
   TiSocialInstagram,
   TiSocialPinterest,
 } from "react-icons/ti";
+
 export function Footer() {
   const starStyle = {
     color: "gold",

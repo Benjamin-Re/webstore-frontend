@@ -1,6 +1,6 @@
-import css from "../styles/Card.css";
+import "../styles/Card.css";
 import { useMyContext } from "../Context";
-import { useEffect, useState } from "react";
+
 
 export function Card(props) {
   const {cart, getQuantity, increase, decrease} = useMyContext();
