@@ -8,9 +8,10 @@
     padding: 2rem;
     width: 100vw;
 }
+
 .footerWrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 300px;
     gap: 10px;
 }
@@ -20,6 +21,12 @@
     flex-direction: column;
     justify-content: center;
     width: 50%;
+}
+
+.addressInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .verticalDivider {

@@ -28,9 +28,12 @@ export function Footer() {
       </div>
       <div className="footerWrapper">
         <div className="address">
-          <div>Rodeo Drive, 90001, Los Angeles, CA</div>
+          <div className="addressInfo">
+          <div>Rodeo Drive, 90001,</div>
+          <div>Los Angeles, CA</div>
           <div>shopping-art@gmail.com</div>
           <div>555-555-222-111</div>
+          </div>
         </div>
         <div className="verticalDivider"></div>
         <div className="social">

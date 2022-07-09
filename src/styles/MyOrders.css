@@ -18,7 +18,7 @@
     max-width: 100%;
 }
 
-table {
+.orderContainer table {
     max-width: 100%;
     border-collapse: collapse;
     background-color: var(--background);
@@ -28,7 +28,7 @@ table {
     border-radius: .75rem;
 }
 
-td {
+.orderContainer td {
     padding: 1rem;
 }
 
