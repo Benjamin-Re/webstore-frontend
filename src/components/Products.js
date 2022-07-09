@@ -5,9 +5,7 @@ import { useMyContext } from "../Context";
 
 export function Products() {
  const { products } = useMyContext();
-  const [getProducts, setProducts] = products;
-
-
+ const [getProducts, setProducts] = products;
 
   return (
     <>

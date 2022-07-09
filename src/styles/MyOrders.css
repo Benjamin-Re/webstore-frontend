@@ -1,19 +1,38 @@
-
 .orderContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
-    gap: 30px;
-    padding: 30px;
-    justify-content: center;
-   
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  max-width: 100%;
+  flex: 1;
 }
 
-.order {
+.orderTable:nth-child(2n) {
+    background-color: var(--navi);
+    color: var(--naviFont);
+}
+
+.orderContainer div {
+    max-width: 100%;
+}
+
+table {
+    max-width: 100%;
+    border-collapse: collapse;
+    background-color: var(--background);
+    color: var(--backgroundFont);
+    text-align: center;
+    width: 35rem;
+    border-radius: .75rem;
+}
+
+td {
+    padding: 1rem;
+}
+
+.productRow {
     border-bottom: 1px solid black;
 }
 
-.order ul{
-    display: block;
-    margin-left: 20px;
-    list-style: circle !important;
-}

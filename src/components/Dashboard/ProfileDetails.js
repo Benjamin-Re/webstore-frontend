@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import { ChangeAddress } from "./ChangeProfile/ChangeAddress";
 import { ChangePassword } from "./ChangeProfile/ChangePasword";
-import '../../styles/Profile.css';
+import "../../styles/Profile.css";
 
 export function ProfileDetails() {
   // Add variables using state
@@ -66,7 +66,7 @@ export function ProfileDetails() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(passwordRepeat !== "" && password !== passwordRepeat){
+    if (passwordRepeat !== "" && password !== passwordRepeat) {
       setError("Passwords must match");
       navigate("/profile-details");
       return -1;
@@ -81,11 +81,14 @@ export function ProfileDetails() {
         postal: postal,
       },
     };
-    fetch("https://enigmatic-temple-40493.herokuapp.com/users/profile/" + getUserId, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updateData),
-    })
+    fetch(
+      "https://enigmatic-temple-40493.herokuapp.com/users/profile/" + getUserId,
+      {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updateData),
+      }
+    )
       .then((res) => {
         return res.json();
       })
@@ -97,35 +100,51 @@ export function ProfileDetails() {
   };
 
   return (
-    <div >
+    <div className="profileContainer">
       <h1 className="error">{getError}</h1>
       <h2>Profile Details</h2>
-      <div className="profileContainer">
-        <div>First Name: {firstName}</div>
-        <div>Last Name: {lastName}</div>
-        <div>Email: {email}</div>
-        <div>Password: 
-          *********
+      <div className="infoContainer">
+        <div>
+          <div>First Name: </div>
+          <div>{firstName}</div>
+        </div>
+        <div>
+          <div>Last Name: </div>
+          <div>{lastName}</div>
+        </div>
+        <div>
+          <div>Email:</div> <div>{email}</div>
+        </div>
+        <div>
+          <div>Password:</div>
+          <div> *********</div>
+        </div>
+        <div>
           <button
             onClick={() => {
               setIsOpenPassword(true);
             }}
           >
-            <span>Change Password</span>
+            Change Password
           </button>
-          <ChangePassword
-            open={isOpenPassword}
-            onClose={() => {
-              setIsOpenPassword(false);
-            }}
-            handlePassword={handlePassword}
-            handlePasswordRepeat={handlePasswordRepeat}
-            handleSubmit={handleSubmit}
-            field="password"
-          ></ChangePassword>
         </div>
-        <div>Street: 
-          {street}
+        <ChangePassword
+          open={isOpenPassword}
+          onClose={() => {
+            setIsOpenPassword(false);
+          }}
+          handlePassword={handlePassword}
+          handlePasswordRepeat={handlePasswordRepeat}
+          handleSubmit={handleSubmit}
+          field="password"
+        ></ChangePassword>
+
+        <div>
+          <div>Street:</div>
+          <div>{street}</div>
+        </div>
+
+        <div>
           <button
             onClick={() => {
               setIsOpen(true);
@@ -133,19 +152,22 @@ export function ProfileDetails() {
           >
             Change Street
           </button>
-          <ChangeAddress
-            open={isOpen}
-            onClose={() => {
-              setIsOpen(false);
-            }}
-            handleChange={handleStreet}
-            handleSubmit={handleSubmit}
-            field="street"
-          ></ChangeAddress>
+        </div>
+        <ChangeAddress
+          open={isOpen}
+          onClose={() => {
+            setIsOpen(false);
+          }}
+          handleChange={handleStreet}
+          handleSubmit={handleSubmit}
+          field="street"
+        ></ChangeAddress>
+
+        <div>
+          <div>Postal Code:</div>
+          <div>{postal}</div>
         </div>
         <div>
-          Postal Code:
-          {postal}
           <button
             onClick={() => {
               setIsOpenPostal(true);
@@ -153,17 +175,16 @@ export function ProfileDetails() {
           >
             Change Postal
           </button>
-
-          <ChangeAddress
-            open={isOpenPostal}
-            onClose={() => {
-              setIsOpenPostal(false);
-            }}
-            handleChange={handlePostal}
-            handleSubmit={handleSubmit}
-            field="postal"
-          ></ChangeAddress>
         </div>
+        <ChangeAddress
+          open={isOpenPostal}
+          onClose={() => {
+            setIsOpenPostal(false);
+          }}
+          handleChange={handlePostal}
+          handleSubmit={handleSubmit}
+          field="postal"
+        ></ChangeAddress>
       </div>
     </div>
   );

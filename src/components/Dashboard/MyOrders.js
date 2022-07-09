@@ -66,40 +66,66 @@ export function MyOrders() {
         month = "December";
         break;
       default:
-        month = typeof(date.getMonth());
+        month = typeof date.getMonth();
     }
-    let fullDate = day+ " " + month + " "+ date.getFullYear();
+    let fullDate = day + " " + month + " " + date.getFullYear();
     return fullDate;
   }
 
   return (
     <>
-      <h2>Your Orders</h2>
       <div className="orderContainer">
-        {getOrders.map((order) => {
-          return (
-            <div className="order">
-              <div>Date: {dateResolver(new Date(order.date))}</div>
-              <div>Total: {order.total}€</div> 
-              <br></br>
-              Products:{" "} 
-              <ol>
-              {order.products.map((product) => {
-                return (
-                  <>
-                  <li>{product.name}{" "} </li>
-                  <ul>
-                      <li>{product.price}€{" "} </li>
-                      <li>{product.quantity} units {" "}</li>
-                    </ul>
-                  </>
-                );
-              })}
-              </ol>
-            </div>
-          );
-        })}
+      <h2>Your Orders</h2>
+        <div>
+          {getOrders.map((order, index) => {
+            return (
+              <table className="orderTable">
+              <tr>
+                <td style={{fontWeight: "800"}}>Order Nr. {index + 1}</td>
+                <td>{dateResolver(new Date(order.date))}</td>
+                <td></td>
+              </tr>
+                {order.products.map((product) => {
+                  return (
+                    <tr className="productRow">
+                      <td>{product.name}</td>
+                      <td>{product.quantity}</td>
+                      <td>{product.price}€</td>
+                    </tr>
+                  );
+                })}
+                <tr>
+                  <td></td>
+                  <td style={{fontWeight: "800"}}>Total:</td>
+                  <td style={{fontWeight: "800"}}>{order.total}€</td>
+                </tr>
+              </table>
+            );
+          })}
+        </div>
       </div>
     </>
   );
 }
+
+// // <div className="order">
+// //   <div>Date: {dateResolver(new Date(order.date))}</div>
+// //   <div>Total: {order.total}€</div>
+// //   <br></br>
+// //   Products:{" "}
+// //   <ol>
+// {
+//   order.products.map((product) => {
+//     return (
+//       <>
+//         <li>{product.name} </li>
+//         <ul>
+//           <li>{product.price}€ </li>
+//           <li>{product.quantity} units </li>
+//         </ul>
+//       </>
+//     );
+//   });
+// }
+// //   </ol>
+// // </div>

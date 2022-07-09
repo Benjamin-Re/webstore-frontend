@@ -1,8 +1,8 @@
 :root{
-    --navi: #ffffff;
-    --main: #003459;
-    --button: #00a8e8;
-    --background: #e7ecef;
+    --navi: #ffffff; --naviFont: #000;
+    --main: #003459; --mainFont: #fff;
+    --button: #00a8e8; --buttonFont: #000;
+    --background: #e7ecef; --backgroundFont: #000;
   }
   
   /* :root{

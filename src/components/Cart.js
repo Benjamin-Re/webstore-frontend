@@ -31,7 +31,7 @@ export function Cart() {
                 <td>
                   <img
                     className="productImage"
-                    src={product.imgSrc}
+                    src={"https://enigmatic-temple-40493.herokuapp.com/"+product.imgSrc}
                     alt="Depiction of a product"
                   ></img>
                 </td>
@@ -59,29 +59,7 @@ export function Cart() {
                   </button>
                 </td>
               </tr>
-              //  <div className="cartItem">
-              //     <img className="productImage" src={product.imgSrc} alt="Depiction of a product"></img>
-              //     <div className="article">
-              //       {product.name} {product.price}€
-              //     </div>
-              //     <div className="buttonSection">
-              //     <button className="plusMinus"
-              //       onClick={() => {
-              //         decrease(product.id);
-              //       }}
-              //     >
-              //       -
-              //     </button>
-              //     <span>{product.quantity}</span>
-              // <button className="plusMinus"
-              //   onClick={() => {
-              //     increase(product.id, product.stock);
-              //   }}
-              // >
-              //   +
-              // </button>
-              //     </div>
-              //   </div>
+
             );
           })}
           <tr>

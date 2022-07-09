@@ -18,8 +18,7 @@ export function Nav() {
     <>
       <nav className="nav">
         <Link to="/" className="site-title">
-          Shopping <span className="theC">C</span>
-          <span className="theA">/\</span>rt
+          Shopping C<span className="theA">/\</span>rt
         </Link>
         <div className="rightSection">
         <ul className="desktop">
@@ -30,7 +29,7 @@ export function Nav() {
             <Link className="link" to="/auth">{getLoggedIn ? "Dashboard" : "Login"}</Link>
           </li>
           <li>
-            <Link className="link" to="/contact">Contact</Link>
+            <Link className="link" to="/about">About us</Link>
           </li>
         </ul>
         <Link to="/cart">
@@ -55,7 +54,7 @@ export function Nav() {
             </Link>
           </li>
           <li>
-            <Link className="link dropLink" to="/contact" onClick={handleBurger}>Contact</Link>
+            <Link className="link dropLink" to="/about" onClick={handleBurger}>About us</Link>
           </li>
           </ul>
         </div>

@@ -7,6 +7,7 @@
     background-color: var(--background);
     flex: 1;
     padding: 2rem;
+    width: 100%;
 }
 
 .dashContainer div {
@@ -32,4 +33,5 @@
     max-width: 5rem;
     align-items: center;
     gap: 10px;
+    margin-left: 1.5rem;
 }

@@ -36,7 +36,7 @@ export function Home() {
       <h2>What our customers think</h2>
         <div style={lineStyle}></div>
         <div className="customerCard">
-          <img src="http://localhost:8000/brush.jpg" alt="customer"></img>
+          <img src="https://enigmatic-temple-40493.herokuapp.com/home/customer1.jpg" alt="customer"></img>
           <div className="customerVoice">
             <h1>My all time favourite store</h1>I buy here all the time. You
             should too, if you want the best value for your money. <br></br>
@@ -57,7 +57,7 @@ export function Home() {
             - John Powers <br></br>
             Los Angeles, CA
           </div>
-          <img src="/img/customer2.jpg" alt="customer"></img>
+          <img src="https://enigmatic-temple-40493.herokuapp.com/home/customer2.jpg" alt="customer"></img>
         </div>
       </div>
       {/*Section 3*/}
@@ -65,19 +65,19 @@ export function Home() {
         <div style={lineStyle}><h2>Our Materials</h2></div>
         <div className="materials">
         <div className="sec3Card">
-          <img src="/img/brushes.jpg" alt="image of material"></img>
+          <img src="https://enigmatic-temple-40493.herokuapp.com/home/brushes.jpg" alt="depiction of material"></img>
           <div><h2>Durable</h2>Our materials are of the highest quality standards.
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum pretium varius. 
           </div>
         </div>
         <div className="sec3Card">
-          <img src="/img/canvas.jpg" alt="image of material"></img>
+          <img src="https://enigmatic-temple-40493.herokuapp.com/home/canvas.jpg" alt="depiction of material"></img>
           <div><h2>Sustainable</h2>Our materials are of the highest quality standards
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum pretium varius. 
           </div>
         </div>
         <div className="sec3Card">
-          <img src="/img/paint.jpg" alt="image of material"></img>
+          <img src="https://enigmatic-temple-40493.herokuapp.com/home/paint.jpg" alt="depiction of material"></img>
           <div><h2>Design</h2>Our materials are of the highest quality standards
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum pretium varius. 
           </div>

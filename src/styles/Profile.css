@@ -4,17 +4,25 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    width: 100%;
-
+    min-width: 100%;
+    background-color: var(--background);
+    flex:1;
+    padding: 1.5rem;
 }
 
-.profileContainer>div{
-    width: 90%;
+.infoContainer{
+    width: 80%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    
+}
+
+.infoContainer>div {
+    width: 100%;
+    display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid black;
 }
 
 input {

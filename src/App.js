@@ -11,6 +11,7 @@ import { MyOrders } from './components/Dashboard/MyOrders';
 import { ProfileDetails } from './components/Dashboard/ProfileDetails';
 import {ChangeAddress} from './components/Dashboard/ChangeProfile/ChangeAddress.js'
 import './styles/App.css';
+import { About } from './components/About';
 import { Footer } from './components/Footer';
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
             <Route path="/my-orders" element={<MyOrders />} />
             <Route path="/profile-details" element={<ProfileDetails />} />
             <Route path="/address" element={<ChangeAddress />} />
-            <Route path="/contact" element={<Footer />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </div>
         <Footer></Footer>

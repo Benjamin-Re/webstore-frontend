@@ -24,7 +24,7 @@ export function ContextProvider({ children }) {
   const [getProducts, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`https://enigmatic-temple-40493.herokuapp.com/products`)
+    fetch("https://enigmatic-temple-40493.herokuapp.com/products/")
       .then((res) => res.json())
       .then((json) => {
         setProducts(json.data);

@@ -33,8 +33,8 @@ export function ChangePassword({
           onChange={handlePasswordRepeat}
         ></input>
         <button type="submit">Submit</button>
-      </form>
       <button onClick={onClose}>Close</button>
+      </form>
     </div>
   );
 }

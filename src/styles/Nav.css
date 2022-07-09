@@ -1,7 +1,7 @@
 .nav {
   position: relative;
   background-color: var(--navi);
-  color: #000;
+  color: var(--naviFont);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,18 +48,14 @@ a:hover {
 
 .site-title {
   font-size: 2rem;
-  letter-spacing: -2px;
-}
-
-.theC {
-  color: var(--strong);
-  font-size: 2rem;
+  letter-spacing: -1px;
 }
 
 .theA {
   font-size: 2.5rem;
-  letter-spacing: -15px;
-  margin-right: 10px;
+  letter-spacing: 1px;
+  margin-right: 0px;
+  color: var(--button);
 }
 
 .hamburger {

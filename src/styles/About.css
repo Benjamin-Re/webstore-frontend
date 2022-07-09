@@ -1,0 +1,23 @@
+.aboutHero {
+    background-image: url("https://enigmatic-temple-40493.herokuapp.com/about/aboutBack.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--mainFont);
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.aboutContent {
+    padding: 5rem;
+    width: 100%;
+    flex: 1;
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+}
+

@@ -4,7 +4,7 @@ export function ChangeAddress({ open, children, onClose, handleChange, handleSub
   }
 
   return (
-    <>
+    <div className="modal">
       <h1>Change Address</h1>
       { children }
       <form onSubmit={handleSubmit}>
@@ -16,8 +16,8 @@ export function ChangeAddress({ open, children, onClose, handleChange, handleSub
                 onChange={handleChange}
               ></input>
               <button type="submit">Submit</button>
-            </form>
       <button onClick={onClose}>Close</button>
-    </>
+            </form>
+    </div>
   );
 }
