@@ -93,7 +93,7 @@ export function ProfileDetails() {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
+        
         navigate("/auth");
       })
       .catch((error) => console.log(error));

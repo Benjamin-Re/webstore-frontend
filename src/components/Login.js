@@ -5,17 +5,14 @@ import "../styles/Signup.css"; // reusing signup's styles
 
 export function Login() {
   // Add variables using state
-  const { cart, logged, token, userId } = useMyContext();
+  const { cart, logged, token, userId, role } = useMyContext();
   const [getLoggedIn, setLoggedIn] = logged;
   const [getToken, setToken] = token;
   const [getUserId, setUserId] = userId;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [getRole, setRole] = role;
 
-  // For testing purposes
-  useEffect(() => {
-    console.log("useEffect " + getLoggedIn);
-  }, [getLoggedIn]);
 
   // Functions handling user input
   const handleEmail = (e) => setEmail(e.target.value);
@@ -43,10 +40,10 @@ export function Login() {
         } else return res.json();
       })
       .then((data) => {
-        setUserId(data["user"]["_id"]);
+        setUserId(data["userId"]);
         setToken(data["accessToken"]);
-        setLoggedIn(true);
-        console.log("inside handle submit");
+        setRole(data["role"]);
+        setLoggedIn(true); 
       })
       .catch((error) => console.log(error));
   };

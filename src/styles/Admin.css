@@ -1,0 +1,25 @@
+.outerContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    width: 100%;
+    flex: 1;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.outerContainer table {
+    text-align: center;
+    border-collapse: collapse;
+    width: 80%;
+    height: 20rem;
+}
+
+.outerContainer td {
+    margin: 4rem;
+    
+}
+
+.delete {
+    background-color: red;
+}

@@ -16,9 +16,7 @@ export function Cart() {
     textAlign: "center",
   }
 
-  useEffect(() => {
-    console.log(getCart);
-  }, [getCart]);
+
 
   return (
     <div className="cartContainer">
@@ -31,7 +29,7 @@ export function Cart() {
                 <td>
                   <img
                     className="productImage"
-                    src={"https://enigmatic-temple-40493.herokuapp.com/"+product.imgSrc}
+                    src={"https://enigmatic-temple-40493.herokuapp.com/products/"+product.imgSrc}
                     alt="Depiction of a product"
                   ></img>
                 </td>
@@ -41,7 +39,7 @@ export function Cart() {
                   <button
                     className="plusMinus"
                     onClick={() => {
-                      decrease(product.id);
+                      decrease(product._id);
                     }}
                   >
                     -
@@ -52,7 +50,7 @@ export function Cart() {
                   <button
                     className="plusMinus"
                     onClick={() => {
-                      increase(product.id, product.stock);
+                      increase(product._id, product.stock);
                     }}
                   >
                     +
@@ -84,8 +82,6 @@ export function Cart() {
   }
 
   function handleCheckout() {
-    console.log(getLoggedIn);
-
     // if not logged in redirect to /auth
     if (!getLoggedIn) {
       navigate("/auth");
@@ -127,7 +123,7 @@ export function Cart() {
 
     // Decrease products quantity in stock
     getCart.map((product) => {
-      const id = product.id;
+      const id = product._id;
       const quantity = product.quantity * -1;
       fetch("https://enigmatic-temple-40493.herokuapp.com/products/" + id, {
         method: "PATCH",
@@ -146,7 +142,7 @@ export function Cart() {
         .then((data) => {
           // Clear the cart after successful checkout
           setCart([]);
-          console.log(data);
+          
         });
     });
     navigate("/my-orders");

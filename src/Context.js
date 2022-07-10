@@ -21,6 +21,7 @@ export function ContextProvider({ children }) {
   const [getLoggedIn, setLoggedIn] = useState(false);
   const [getToken, setToken] = useState();
   const [getUserId, setUserId] = useState("");
+  const [getRole, setRole] = useState("");
   const [getProducts, setProducts] = useState([]);
 
   useEffect(() => {
@@ -41,6 +42,7 @@ export function ContextProvider({ children }) {
       setToken(data.token);
       setUserId(data.userId);
       setCart(data.cart);
+      setRole(data.role);
     }
   }, []);
 
@@ -51,6 +53,7 @@ export function ContextProvider({ children }) {
       token: getToken,
       userId: getUserId,
       cart: getCart,
+      role: getRole,
     }
     sessionStorage.setItem("user-data", JSON.stringify(data));
   })
@@ -58,15 +61,15 @@ export function ContextProvider({ children }) {
 
 
   function getItemQuantity(id) {
-    return getCart.find(item => item.id === id)?.quantity || 0;
+    return getCart.find(item => item._id === id)?.quantity || 0;
   }
 
   function increaseQuantity(id, stock) {
-   console.log(stock);
+   
     setCart(currItems => {
      
         return currItems.map(item => {
-          if (item.id === id) {
+          if (item._id === id) {
             if(item.quantity < stock){
               return { ...item, quantity: item.quantity + 1 }
             } else {
@@ -82,11 +85,11 @@ export function ContextProvider({ children }) {
 
   function decreaseCartQuantity(id) {
     setCart(currItems => {
-      if (currItems.find(item => item.id === id)?.quantity === 1) {
-        return currItems.filter(item => item.id !== id)
+      if (currItems.find(item => item._id === id)?.quantity === 1) {
+        return currItems.filter(item => item._id !== id)
       } else {
         return currItems.map(item => {
-          if (item.id === id) {
+          if (item._id === id) {
             return { ...item, quantity: item.quantity - 1 }
           } else {
             return item
@@ -105,6 +108,7 @@ export function ContextProvider({ children }) {
         logged: [getLoggedIn, setLoggedIn],
         token: [getToken, setToken],
         userId: [getUserId, setUserId],
+        role: [getRole, setRole],
         getQuantity: getItemQuantity,
         increase: increaseQuantity,
         decrease: decreaseCartQuantity,

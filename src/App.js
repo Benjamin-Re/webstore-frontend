@@ -13,6 +13,7 @@ import {ChangeAddress} from './components/Dashboard/ChangeProfile/ChangeAddress.
 import './styles/App.css';
 import { About } from './components/About';
 import { Footer } from './components/Footer';
+import { Admin } from './components/Admin';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/profile-details" element={<ProfileDetails />} />
             <Route path="/address" element={<ChangeAddress />} />
             <Route path="/about" element={<About />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </div>
         <Footer></Footer>

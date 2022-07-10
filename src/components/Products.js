@@ -17,6 +17,7 @@ export function Products() {
               <>
                 <Card
                   id={product.id}
+                  _id={product._id}
                   name={product.name}
                   price={product.price}
                   stock={product.stock}

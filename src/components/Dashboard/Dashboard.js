@@ -7,11 +7,12 @@ import { CgProfile } from 'react-icons/cg';
 import { AiOutlineHeart } from 'react-icons/ai';
 
 export function Dashboard() {
-  const { cart, logged, token, userId } = useMyContext();
+  const { cart, logged, token, userId, role } = useMyContext();
   const [getCart, setCart] = cart;
   const [getLoggedIn, setLoggedIn] = logged;
   const [getToken, setToken] = token;
   const [getUserId, setUserId] = userId;
+  const [getRole, setRole] = role;
   const navigate = useNavigate();
   const [getFirstName, setFirstName] = useState("");
   const [getLastName, setLastName] = useState("");
@@ -45,7 +46,7 @@ export function Dashboard() {
   // Get user avatar
   const fetchImage = async () => {
     let initials = getFirstName[0] + getLastName[0];
-    console.log(initials);
+    
     const res = await fetch(
       `https://avatars.dicebear.com/api/initials/${initials}.svg`
     );
@@ -62,8 +63,9 @@ export function Dashboard() {
     <div className="dashContainer">
       <div>
         <h2>
-          Welcome to your dashboard{" "}
+          Welcome to your dashboard {"  "}
           <span style={nameStyle}>{getFirstName}</span>
+          {getRole==="admin" ? <span>{"  "}(Admin)</span> : ""}
         </h2>
         <div className="iconLogout">
           <img src={getImage} alt="avatar"></img>
@@ -91,5 +93,6 @@ export function Dashboard() {
     setToken("");
     setUserId("");
     navigate("/");
+    setRole("");
   }
 }

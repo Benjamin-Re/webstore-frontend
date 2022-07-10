@@ -5,8 +5,10 @@ import { FaBars } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 
 export function Nav() {
-  const { cart, logged, token, cartQuantity } = useMyContext();
+  const { cart, logged, token, cartQuantity, role } = useMyContext();
   const [getLoggedIn, setLoggedIn] = logged;
+  const [getRole, setRole] = role;
+
   const burgerStyle = {
     fontSize: "3rem",
   };
@@ -22,6 +24,8 @@ export function Nav() {
         </Link>
         <div className="rightSection">
         <ul className="desktop">
+          
+          {getRole === "admin" ? <li><Link className="link" to="/admin">Admin</Link></li> : ""}
           <li>
             <Link className="link" to="/products">Products</Link>
           </li>
@@ -43,6 +47,7 @@ export function Nav() {
       <div className="dropdown">
         <div className="dropdownMenu">
           <ul>
+            {getRole === "admin" ? <li><Link className="link dropLink" to="/admin">Admin</Link></li> : ""}
           <li>
             <Link className="link dropLink" to="/products" onClick={handleBurger}>
               Products
