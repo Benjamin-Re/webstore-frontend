@@ -125,7 +125,7 @@ export function Cart() {
 
     // Decrease products quantity in stock
     getCart.map((product) => {
-      console.log(product._id);
+      
       const productId = product._id;
       const quantity = product.quantity * -1;
       fetch("https://enigmatic-temple-40493.herokuapp.com/products/" + productId, {
