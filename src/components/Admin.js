@@ -31,7 +31,7 @@ export function Admin() {
           <tbody>
           {getProducts.map((product) => {
             return (
-              <>
+              
                 <tr key={product.name}>
                   <td>{product.name}</td>
                   <td>{product.price}</td>
@@ -56,7 +56,7 @@ export function Admin() {
                       }}>Update</button>
                   </td>
                 </tr>
-              </>
+              
             );
           })}
           <tr>

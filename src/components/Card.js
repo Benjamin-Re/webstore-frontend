@@ -15,7 +15,7 @@ export function Card(props) {
           <div className="article">
             <div>{props.name}</div> <div>{props.price}€</div>
           </div>
-          {props.stock === 0 ? (<div>Sold Out</div>) : (
+          {props.stock < 1 ? (<div>Sold Out</div>) : (
             <div className="buttonSection">
             {quantity === 0 ? (
               <button onClick={addToCart}>Add to Cart</button>

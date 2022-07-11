@@ -125,9 +125,10 @@ export function Cart() {
 
     // Decrease products quantity in stock
     getCart.map((product) => {
-      const id = product._id;
+      console.log(product._id);
+      const productId = product._id;
       const quantity = product.quantity * -1;
-      fetch("https://enigmatic-temple-40493.herokuapp.com/products/" + id, {
+      fetch("https://enigmatic-temple-40493.herokuapp.com/products/" + productId, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -137,7 +138,7 @@ export function Cart() {
       })
         .then((res) => {
           if (!res.ok) {
-            throw new Error("errpr");
+            throw new Error("error");
           }
           return res.json();
         })
