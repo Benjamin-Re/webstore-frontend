@@ -7,12 +7,7 @@ import {
 } from "react-icons/ti";
 
 export function Footer() {
-  const starStyle = {
-    color: "gold",
-    fontSize: "1.5rem",
-    alignSelf: "center",
-    width: "100%",
-  };
+
   const lineStyle = {
     borderBottom: "3px solid gold",
     width: "250px",
