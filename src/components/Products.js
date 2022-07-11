@@ -14,7 +14,7 @@ export function Products() {
         <div className="products-container">
           {getProducts.map((product) => {
             return (
-              <>
+              <div key={product._id}>
                 <Card
                   id={product.id}
                   _id={product._id}
@@ -23,7 +23,7 @@ export function Products() {
                   stock={product.stock}
                   imgSrc={product.imgSrc}
                 ></Card>
-              </>
+              </div>
             );
           })}
         </div>

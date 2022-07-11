@@ -79,7 +79,7 @@ export function MyOrders() {
         <div>
           {getOrders.map((order, index) => {
             return (
-              <table className="orderTable">
+              <table key={index} className="orderTable">
               <tr>
                 <td style={{fontWeight: "800"}}>Order Nr. {index + 1}</td>
                 <td>{dateResolver(new Date(order.date))}</td>
@@ -87,7 +87,7 @@ export function MyOrders() {
               </tr>
                 {order.products.map((product) => {
                   return (
-                    <tr className="productRow">
+                    <tr key={product._id} className="productRow">
                       <td>{product.name}</td>
                       <td>{product.quantity}</td>
                       <td>{product.price}€</td>
@@ -108,24 +108,3 @@ export function MyOrders() {
   );
 }
 
-// // <div className="order">
-// //   <div>Date: {dateResolver(new Date(order.date))}</div>
-// //   <div>Total: {order.total}€</div>
-// //   <br></br>
-// //   Products:{" "}
-// //   <ol>
-// {
-//   order.products.map((product) => {
-//     return (
-//       <>
-//         <li>{product.name} </li>
-//         <ul>
-//           <li>{product.price}€ </li>
-//           <li>{product.quantity} units </li>
-//         </ul>
-//       </>
-//     );
-//   });
-// }
-// //   </ol>
-// // </div>

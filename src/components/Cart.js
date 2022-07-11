@@ -23,9 +23,10 @@ export function Cart() {
       <h2>Cart</h2>
       <div className="cart">
         <table>
+          <tbody>
           {getCart.map((product) => {
             return (
-              <tr>
+              <tr key={product._id}>
                 <td>
                   <img
                     className="productImage"
@@ -70,6 +71,7 @@ export function Cart() {
               <button style={{width: "100%"}}onClick={handleCheckout}>Buy Now</button>
             </td>
           </tr>
+          </tbody>
         </table>
       </div>
     </div>

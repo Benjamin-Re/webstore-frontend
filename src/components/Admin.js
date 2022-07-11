@@ -12,7 +12,6 @@ export function Admin() {
   const [getName, setName] = useState();
   const [getPrice, setPrice] = useState();
   const [getStock, setStock] = useState();
-  const [getImgSrc, setImgSrc] = useState();
   const [getFile, setFile] = useState();
   const [getId, setId] = useState();
 
@@ -22,15 +21,18 @@ export function Admin() {
       <div className="outerContainer">
         <h2>Stock</h2>
         <table>
+          <thead>
           <tr>
             <th>Description</th>
             <th>Price</th>
             <th>Quantity in Stock</th>
           </tr>
+          </thead>
+          <tbody>
           {getProducts.map((product) => {
             return (
               <>
-                <tr>
+                <tr key={product.name}>
                   <td>{product.name}</td>
                   <td>{product.price}</td>
                   <td>{product.stock}</td>
@@ -68,6 +70,7 @@ export function Admin() {
               </button>
             </td>
           </tr>
+          </tbody>
         </table>
         {/*Add new Product*/}
         <ModifyForm
