@@ -80,6 +80,7 @@ export function MyOrders() {
           {getOrders.map((order, index) => {
             return (
               <table key={index} className="orderTable">
+                <tbody>
               <tr>
                 <td style={{fontWeight: "800"}}>Order Nr. {index + 1}</td>
                 <td>{dateResolver(new Date(order.date))}</td>
@@ -99,6 +100,7 @@ export function MyOrders() {
                   <td style={{fontWeight: "800"}}>Total:</td>
                   <td style={{fontWeight: "800"}}>{order.total}€</td>
                 </tr>
+                </tbody>
               </table>
             );
           })}
